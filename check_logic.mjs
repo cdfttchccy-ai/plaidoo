@@ -210,6 +210,39 @@ for (const file of pages) {
   assert(!html.includes("À COMPLÉTER"), file + " sans placeholder");
   assert(!/note de positionnement|démonstration|maquette/i.test(html), file + " sans wording interne");
   assert(html.includes('rel="canonical"'), file + " canonical");
+  assert(html.includes('href="guides/index.html"'), file + " lien guides");
+}
+
+const guideFiles = fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html")).sort();
+const expectedGuides = [
+  "index.html",
+  "frais-litige-shopify-payments.html",
+  "litige-colis-non-recu-shopify.html",
+  "litige-visa-13-1.html",
+  "preuve-livraison-colissimo-litige.html",
+  "produit-non-conforme-chargeback.html",
+  "stripe-litige-frais-20-euros.html",
+];
+assert(guideFiles.length === expectedGuides.length && expectedGuides.every((name) => guideFiles.includes(name)), "six guides et l'index");
+for (const file of guideFiles) {
+  const html = fs.readFileSync(path.join(root, "guides", file), "utf8");
+  assert(!/<script[^>]+src="https?:/i.test(html), "guides/" + file + " sans script externe");
+  assert(!/<script\b/i.test(html), "guides/" + file + " sans script");
+  assert(!/<form\b/i.test(html), "guides/" + file + " sans formulaire");
+  assert(!emailLike.test(html), "guides/" + file + " sans adresse e-mail");
+  assert(externalSrcs(html).length === 0, "guides/" + file + " sans ressource externe");
+  assert(html.includes("Information générale, pas un conseil juridique"), "guides/" + file + " notice");
+  assert(html.includes("Ceci n'est pas un conseil juridique"), "guides/" + file + " disclaimer");
+  assert(/Mis à jour le \d{1,2} [a-zéû]+ \d{4}/.test(html), "guides/" + file + " date");
+  assert(html.includes('rel="canonical" href="https://cdfttchccy-ai.github.io/plaidoo/guides/' + file + '"'), "guides/" + file + " canonical");
+  assert(html.includes('property="og:title"'), "guides/" + file + " og");
+  assert(html.includes('name="description"'), "guides/" + file + " description");
+  assert(html.includes('href="../outil.html"'), "guides/" + file + " lien outil");
+  assert(!html.includes("À COMPLÉTER"), "guides/" + file + " sans placeholder");
+  assert(!/Payer maintenant|Ajouter au panier|checkout/i.test(html), "guides/" + file + " sans paiement");
+  banned.forEach((pattern) => {
+    assert(!pattern.test(html), "guides/" + file + " sans " + pattern);
+  });
 }
 assert(!index.includes("prix indicatifs"), "tarifs plus indicatifs");
 assert(index.includes("Tarifs prévisionnels à l'ouverture"), "tarifs prévisionnels");
@@ -219,6 +252,9 @@ const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
 for (const page of ["outil.html", "a-propos.html", "sources.html", "mentions-legales.html", "confidentialite.html", "merci.html"]) {
   assert(sitemap.includes(page), "sitemap " + page);
+}
+for (const file of expectedGuides) {
+  assert(sitemap.includes("https://cdfttchccy-ai.github.io/plaidoo/guides/" + file), "sitemap guides/" + file);
 }
 assert(robots.includes("sitemap.xml"), "robots pointe le sitemap");
 

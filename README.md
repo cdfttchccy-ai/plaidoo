@@ -21,8 +21,26 @@ Puis ouvrir [http://127.0.0.1:8765/](http://127.0.0.1:8765/).
 - `mentions-legales.html` — éditeur et hébergeur
 - `confidentialite.html` — formulaire, compteur, droits
 - `merci.html` — accusé de la liste d'attente
+- `guides/index.html` — liste des notes
+- `guides/*.html` — une page par article
 
 Les polices sont celles du système. Aucun service de polices tiers n'est appelé.
+
+## Guides
+
+Les sources sont des fichiers Markdown dans `guides/src/`. Chaque fichier commence par un frontmatter (`title`, `meta_description`, `slug`, `date`). Le HTML est généré puis commité : GitHub Pages sert ces fichiers tels quels, sans étape de build.
+
+```bash
+node scripts/build-guides.mjs
+```
+
+Le script écrit `guides/index.html`, `guides/<slug>.html`, et ajoute ces adresses à `sitemap.xml`. Chaque page affiche la mention « Information générale, pas un conseil juridique » et la date « Mis à jour le », prise du frontmatter (sinon le 9 octobre 2026).
+
+Pour ajouter un guide :
+
+1. Créer `guides/src/<slug>.md` avec le frontmatter, puis le texte. Garder les liens vers les sources. Ne pas inventer de chiffre, d'avis ou de client.
+2. Lancer `node scripts/build-guides.mjs`.
+3. Committer le Markdown, le HTML généré et `sitemap.xml`.
 
 ## Liste d'attente
 
@@ -36,4 +54,4 @@ Node.js 18 ou plus récent :
 node check_logic.mjs
 ```
 
-Le script charge `js/catalog.js` et `js/logic.js`, puis vérifie les 9 motifs × 4 transporteurs × 2 positions d'abonnement. Il refuse un article hors liste, un traceur, un script externe, et une adresse e-mail dans les fichiers du site.
+Le script charge `js/catalog.js` et `js/logic.js`, puis vérifie les 9 motifs × 4 transporteurs × 2 positions d'abonnement. Il refuse un article hors liste, un traceur, un script externe, et une adresse e-mail dans les fichiers du site. Il vérifie aussi la notice, la date et le lien vers l'outil sur chaque page de `guides/`.

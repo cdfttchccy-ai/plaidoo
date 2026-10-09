@@ -439,6 +439,23 @@ legend {
 
 .source-list h2 { font-size: 1.15rem; }
 
+.article { max-width: 48rem; }
+.article h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); }
+.article h2 { margin-top: 1.8rem; font-size: 1.45rem; }
+.article h3 { margin-top: 1.2rem; }
+.article blockquote {
+  margin: 1rem 0;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 4px solid var(--gold);
+  color: var(--ink-soft);
+}
+.article code { font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace; font-size: 0.92em; }
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.article table { min-width: 36rem; background: var(--paper-2); }
+.guide-list { display: grid; gap: 1rem; margin: 1.2rem 0; }
+.guide-list h2 { font-size: 1.35rem; margin: 0 0 0.4rem; }
+.guide-list a { text-decoration: none; }
+
 @media (min-width: 800px) {
   .hero { grid-template-columns: 1.4fr 0.8fr; align-items: center; padding-top: 3rem; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -447,6 +464,7 @@ legend {
   .footer-grid { grid-template-columns: 1.4fr 1fr; }
   .tool-layout { grid-template-columns: minmax(18rem, 0.9fr) 1.3fr; align-items: start; }
   .tool-form { position: sticky; top: 5rem; }
+  .guide-list { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 799px) {

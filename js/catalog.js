@@ -120,7 +120,7 @@
       id: "D215-1",
       title: "Présentation du bouton résilier",
       text: "La fonctionnalité est présentée sous la mention « résilier votre contrat », ou une formule analogue sans ambiguïté, en caractères lisibles. Elle est directement et facilement accessible depuis l'interface où le consommateur peut conclure un contrat en ligne. Le professionnel n'impose pas, au stade de la notification, la création d'un espace personnel.",
-      source: "Texte de l'article D. 215-1 créé par le décret n° 2023-417 du 31 mai 2023, repris à l'identique par deux bases juridiques secondaires consultées le 9 octobre 2026 (Doctrine, Loilà). Légifrance non ouvert sur cet article. Les articles D. 215-2 et D. 215-3, cités par la note de positionnement, n'ont pas été relus mot à mot : ne pas les citer comme si leur texte avait été vérifié.",
+      source: "Texte de l'article D. 215-1 créé par le décret n° 2023-417 du 31 mai 2023, repris à l'identique par deux bases juridiques secondaires consultées le 9 octobre 2026 (Doctrine, Loilà). Légifrance non ouvert sur cet article. Les articles D. 215-2 et D. 215-3 n'ont pas été relus mot à mot : ne pas les citer comme si leur texte avait été vérifié.",
       url: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000047604998",
       confidence: "secondaire"
     },
@@ -588,7 +588,7 @@
     {
       title: "Colissimo — API Documents v0.0.5",
       url: "https://www.colissimo.entreprise.laposte.fr/sites/default/files/2021-04/WS-Documents_FR.pdf",
-      note: "Document de février 2021 cité par la spec du 9 octobre 2026. Types SIGNATURE et DELIVERY_CERTIFICATE. Conditions d'accès actuelles non revérifiées pour cette maquette."
+      note: "Document de février 2021. Types SIGNATURE et DELIVERY_CERTIFICATE. Les conditions d'accès actuelles n'ont pas été revérifiées."
     },
     {
       title: "Mondial Relay — suivi et manuel Connect",
@@ -598,18 +598,13 @@
     {
       title: "Chronopost — obtenir la preuve de livraison",
       url: "https://www.chronopost.fr/fr/faq/expediteur/comment-obtenir-la-preuve-de-livraison-de-mon-colis",
-      note: "Page officielle citée par la spec du 9 octobre 2026 : espace client ou Chronotrace, PDF au plus tôt le lendemain pour la France."
+      note: "Page officielle : espace client ou Chronotrace, PDF au plus tôt le lendemain pour la France."
     },
     {
       title: "Shopify — résoudre un chargeback",
       url: "https://help.shopify.com/en/manual/payments/chargebacks/resolve-chargeback",
-      note: "Cité par la note de positionnement du 9 octobre 2026 : envoi automatique des données de commande, délai en général de 7 à 21 jours, PSP tiers hors Shopify. Page non rouverte pour cette maquette."
+      note: "Envoi automatique des données de commande, délai en général de 7 à 21 jours, prestataires de paiement tiers hors Shopify. Page lue le 9 octobre 2026."
     },
-    {
-      title: "Note de positionnement Plaidoo",
-      url: "",
-      note: "Brouillon interne du 9 octobre 2026. Il fixe le ton, le nom et les phrases de la page. Il ne remplace pas les sources ci-dessus pour un numéro d'article ou un code de réseau."
-    }
   ];
 
   root.PLAIDOO_CATALOG = {

@@ -282,6 +282,52 @@ for (const file of expectedGuides) {
 }
 assert(robots.includes("Sitemap: https://cdfttchccy-ai.github.io/plaidoo/sitemap.xml"), "robots pointe le sitemap absolu");
 
+function channel(hex, index) {
+  const value = parseInt(hex.slice(1 + index * 2, 3 + index * 2), 16) / 255;
+  return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+}
+function luminance(hex) {
+  return 0.2126 * channel(hex, 0) + 0.7152 * channel(hex, 1) + 0.0722 * channel(hex, 2);
+}
+function contrast(a, b) {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+}
+[
+  ["#1B2A4A", "#f3efe4"],
+  ["#3E4C66", "#f3efe4"],
+  ["#047857", "#f3efe4"],
+  ["#F7F4EE", "#1B2A4A"],
+  ["#10B981", "#121C33"],
+  ["#f6f1e7", "#121C33"],
+].forEach(([fg, bg]) => {
+  const ratio = contrast(fg, bg);
+  assert(ratio >= 4.5, "contraste " + fg + " sur " + bg + " = " + ratio.toFixed(2));
+});
+
+for (const file of ["logo.svg", "logo-icon.svg", "favicon.svg"]) {
+  const svg = fs.readFileSync(path.join(root, file), "utf8");
+  assert(!/<image\b|base64/i.test(svg), file + " sans image embarquee");
+  assert(svg.includes("#1B2A4A"), file + " navy");
+  assert(svg.includes("#10B981"), file + " vert");
+}
+assert(fs.readFileSync(path.join(root, "logo.svg"), "utf8").includes('aria-label="Plaidoo"'), "wordmark du logo");
+const pngSizes = {
+  "favicon-32.png": [32, 32],
+  "favicon-192.png": [192, 192],
+  "favicon-512.png": [512, 512],
+  "apple-touch-icon.png": [180, 180],
+  "og.png": [1200, 630],
+};
+for (const [file, [width, height]] of Object.entries(pngSizes)) {
+  const bytes = fs.readFileSync(path.join(root, file));
+  assert(bytes[0] === 0x89 && bytes[1] === 0x50, file + " png");
+  assert(bytes.readUInt32BE(16) === width && bytes.readUInt32BE(20) === height, file + " " + width + "x" + height);
+}
+assert(index.includes('alt="Plaidoo"'), "logo avec alternative");
+assert(index.includes("favicon-192.png") && index.includes("favicon-512.png"), "favicon 192 et 512");
+assert(!/#1b4332/i.test(css), "ancienne couleur retiree");
+
 const outilJs = fs.readFileSync(path.join(root, "js/outil.js"), "utf8");
 assert(outilJs.includes("Ceci n'est pas un conseil juridique"), "disclaimer a cote du dossier");
 assert(outilJs.includes(hitLetter), "compteur lettre-generee");

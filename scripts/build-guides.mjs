@@ -27,13 +27,13 @@ function inline(src) {
   while ((match = re.exec(src))) {
     parts.push(escapeText(src.slice(last, match.index)));
     if (match[1] !== undefined) {
-      parts.push(`<a href="${escapeAttr(match[2])}">${escapeText(match[1])}</a>`);
+      parts.push(`<a href="${escapeAttr(match[2])}">${inline(match[1])}</a>`);
     } else if (match[3] !== undefined) {
       parts.push(`<code>${escapeText(match[3])}</code>`);
     } else if (match[4] !== undefined) {
-      parts.push(`<strong>${escapeText(match[4])}</strong>`);
+      parts.push(`<strong>${inline(match[4])}</strong>`);
     } else if (match[5] !== undefined) {
-      parts.push(`<em>${escapeText(match[5])}</em>`);
+      parts.push(`<em>${inline(match[5])}</em>`);
     } else {
       const raw = match[6];
       const url = raw.replace(/[.,;:]+$/, "");
@@ -77,13 +77,21 @@ function markdownToHtml(markdown) {
       out.push(table(rows));
       continue;
     }
-    if (line.startsWith("> ")) {
-      const quote = [];
-      while (i < lines.length && lines[i].startsWith("> ")) {
-        quote.push(lines[i].slice(2));
+    if (line === ">" || line.startsWith("> ")) {
+      const paragraphs = [];
+      let current = [];
+      while (i < lines.length && (lines[i] === ">" || lines[i].startsWith("> "))) {
+        const text = lines[i] === ">" ? "" : lines[i].slice(2);
+        if (!text.trim()) {
+          if (current.length) paragraphs.push(current.join(" "));
+          current = [];
+        } else {
+          current.push(text.trim());
+        }
         i += 1;
       }
-      out.push(`<blockquote><p>${inline(quote.join(" "))}</p></blockquote>`);
+      if (current.length) paragraphs.push(current.join(" "));
+      out.push(`<blockquote>${paragraphs.map((paragraph) => `<p>${inline(paragraph)}</p>`).join("")}</blockquote>`);
       continue;
     }
     if (line.startsWith("### ")) {
@@ -232,13 +240,13 @@ const cards = guides.map((guide) => `        <article class="panel">
 
 const indexHtml = chrome(
   "Guides — Plaidoo",
-  "Notes sur les litiges Shopify Payments et Stripe : frais, colis non reçu, Visa 13.1, Colissimo, produit non conforme. Information générale.",
+  "Notes sur les litiges Shopify Payments et Stripe : frais, colis non reçu, Visa 13.1, 13.2, 13.6 et 13.7, Colissimo, produit non conforme, modèle de réponse. Information générale.",
   "/guides/index.html",
   `    <p class="eyebrow">Guides</p>
     <h1>Comprendre un litige, sans promesse de gain.</h1>
     <p class="disclaimer disclaimer-banner" role="note"><strong>Information générale, pas un conseil juridique.</strong> Ceci n'est pas un conseil juridique. Les règles citées peuvent changer.</p>
     <p class="fine-print">Mis à jour le ${frenchDate(guides[0] ? guides[0].date : "2026-10-09")}.</p>
-    <p class="lead">Six notes rédigées à partir de pages officielles consultées le 9 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
+    <p class="lead">Dix notes rédigées à partir de pages officielles consultées le 9 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
     <div class="guide-list">
 ${cards}
     </div>

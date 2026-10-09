@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modèle de réponse à un litige chargeback (à trous) — Plaidoo</title>
+  <meta name="description" content="Une trame de réponse à trous pour un litige chargeback Shopify Payments ou Stripe, construite sur les consignes de Shopify, Stripe et Visa.">
+  <link rel="canonical" href="https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html">
+  <meta property="og:title" content="Modèle de réponse à un litige chargeback (à trous) — Plaidoo">
+  <meta property="og:description" content="Une trame de réponse à trous pour un litige chargeback Shopify Payments ou Stripe, construite sur les consignes de Shopify, Stripe et Visa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html">
+  <meta property="og:image" content="https://cdfttchccy-ai.github.io/plaidoo/og.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Modèle de réponse à un litige chargeback (à trous) — Plaidoo">
+  <meta name="twitter:description" content="Une trame de réponse à trous pour un litige chargeback Shopify Payments ou Stripe, construite sur les consignes de Shopify, Stripe et Visa.">
+  <meta name="twitter:image" content="https://cdfttchccy-ai.github.io/plaidoo/og.png">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img class="logo" src="../logo.svg" alt="" width="40" height="40"> Plaidoo</a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="../index.html">Présentation</a>
+        <a href="../outil.html">Outil</a>
+        <a href="../index.html#tarifs">Tarifs</a>
+        <a href="index.html">Guides</a>
+        <a href="../a-propos.html">À propos</a>
+      </nav>
+      <details class="nav-drawer">
+        <summary>Menu</summary>
+        <nav aria-label="Menu mobile">
+          <a href="../index.html">Présentation</a>
+          <a href="../outil.html">Outil</a>
+          <a href="../index.html#tarifs">Tarifs</a>
+          <a href="index.html">Guides</a>
+          <a href="../a-propos.html">À propos</a>
+          <a href="../sources.html">Sources</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="contenu" class="wrap band article">
+    <p class="eyebrow"><a href="index.html">Guides</a></p>
+    <p class="disclaimer disclaimer-banner" role="note"><strong>Information générale, pas un conseil juridique.</strong> Ceci n'est pas un conseil juridique.</p>
+    <p class="fine-print">Mis à jour le 9 octobre 2026.</p>
+    <article>
+<p>Information générale, pas un conseil juridique.</p>
+<h1>Modèle de réponse à un litige chargeback (à trous)</h1>
+<blockquote><p>Sources officielles consultées le 9 octobre 2026, listées en fin d'article. Ce modèle est une trame à adapter : il ne garantit aucun résultat, car la banque du client décide. Les règles peuvent changer et varier selon votre prestataire de paiement.</p></blockquote>
+<p>Vous avez reçu un litige (chargeback, ou rétrofacturation) sur Shopify Payments ou Stripe, et vous voulez répondre proprement. Ce guide propose une <strong>trame de réponse à trous</strong> construite à partir de ce que recommandent Shopify, Stripe et Visa, puis explique comment la remplir selon le motif.</p>
+<h2>Avant d'écrire : faut-il contester ?</h2>
+<p>Le guide Visa pour les marchands (juin 2024) indique, pour plusieurs motifs, d'<strong>accepter le litige</strong> quand la réclamation du client est fondée : marchandise jamais livrée, remboursement dû mais pas encore fait. Stripe conseille aussi de vérifier si la réclamation est valide et si un règlement à l'amiable est possible, par exemple un avoir ou un article de remplacement. Le client peut alors retirer son litige.</p>
+<p>Contester a un coût :</p>
+<ul><li>Shopify Payments en France facture 15 EUR de frais par rétrofacturation, remboursés si vous gagnez.</li><li>Stripe France facture 20 € par litige reçu, plus 20 € si vous répondez manuellement ; ces 20 € de réponse sont remboursés si vous gagnez.</li></ul>
+<p>Ces montants viennent des pages officielles citées en fin d'article.</p>
+<h2>Les règles de forme qui comptent</h2>
+<ul><li><strong>Une seule chance chez Stripe.</strong> Stripe précise que vous n'avez qu'une occasion de soumettre. Votre réponse et vos fichiers partent immédiatement à la banque et ne peuvent plus être modifiés.</li><li><strong>Soumission automatique chez Shopify.</strong> Avec Shopify Payments, la réponse part à la date d'échéance, même si vous n'ajoutez rien. Une partie des données de la commande est incluse automatiquement : produits, client, adresses, IP, suivi, remboursements, historique.</li><li><strong>Le plus fort en premier.</strong> Shopify rappelle qu'un agent bancaire peut ne passer que « quelques minutes » sur votre dossier. Il recommande l'ordre suivant : preuve directe, reconnaissance par le client, politiques, contexte.</li><li><strong>Des descriptions précises.</strong> Plutôt que « capture d'écran ci-jointe », écrivez ce que montre la pièce, avec la date et le montant.</li><li><strong>Des captures plutôt que des liens.</strong> Shopify recommande des captures des pages de suivi et des échanges plutôt que des liens externes.</li><li><strong>Répondre point par point.</strong> Pour le motif « non conforme », Visa recommande de traiter chacun des arguments du client.</li></ul>
+<h2>La trame à trous</h2>
+<p>Copiez la trame, remplacez chaque [crochet] et supprimez les blocs qui ne s'appliquent pas. N'affirmez rien que vos pièces ne prouvent pas.</p>
+<blockquote><p><strong>Objet : Réponse au litige [référence du litige] — commande [n° de commande] du [date]</strong></p><p><strong>1. Résumé</strong> Le [date], [nom du client] a passé la commande [n°] pour un montant de [montant] €. Le litige est ouvert pour le motif [motif tel qu'affiché, ex. « produit non reçu » / Visa 13.1]. Nous contestons ce litige car [une phrase factuelle : le colis a été remis contre signature le (date) / le remboursement a été effectué le (date) / l'abonnement était actif à la date du prélèvement…].</p><p><strong>2. Preuve principale</strong> Pièce 1 : [description précise, ex. « Preuve de livraison du transporteur (nom), colis n° (…), remis le (date) à (adresse identique à celle de la commande) »].</p><p><strong>3. Éléments venant du client</strong> Pièce 2 : [ex. « E-mail du client du (date) confirmant (…) »] — ou : « Le client ne nous a pas contactés avant d'ouvrir ce litige ; nos coordonnées figurent sur (page) et nous aurions traité sa demande. »</p><p><strong>4. Conditions acceptées</strong> Pièce 3 : [politique d'expédition / de retour / d'abonnement / CGV], affichée [où et quand] et acceptée lors du paiement [comment].</p><p><strong>5. Contexte</strong> Pièce 4 : [historique de commandes, vérification d'adresse, échanges complémentaires].</p><p><strong>6. Conclusion</strong> Au vu de ces éléments, nous demandons que le litige soit résolu en notre faveur. [Si un remboursement partiel a déjà été fait : montant et date.]</p></blockquote>
+<h2>Comment remplir la trame selon le motif</h2>
+<p><strong><a href="https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html">Produit non reçu (Visa 13.1, Mastercard 4855)</a>.</strong> Pièce 1 : la confirmation de livraison, « idéalement avec une signature ou une photo » selon Shopify, et la concordance avec l'adresse de la commande. Visa demande de prouver que le titulaire ou une personne autorisée a reçu ou retiré la marchandise.</p>
+<p><strong><a href="https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html">Non conforme ou défectueux (Visa 13.3, Mastercard 4853)</a>.</strong> Pièce 1 : la fiche produit au moment de l'achat et des photos avant expédition. Répondez à chaque argument. Attention : selon Visa, la politique de retour n'a pas d'incidence pour ce motif.</p>
+<p><strong><a href="https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html">Abonnement annulé (Visa 13.2, Mastercard 4841)</a>.</strong> Pièce 1 : les conditions d'abonnement acceptées et l'absence de demande d'annulation à la date du prélèvement. Visa mentionne aussi la preuve que le client a utilisé le service après la date de retrait de son autorisation.</p>
+<p><strong><a href="https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html">Crédit non traité (Visa 13.6, Mastercard 4860)</a>.</strong> Pièce 1 : le justificatif du remboursement (montant, date) ou la preuve qu'aucun crédit n'était dû.</p>
+<p><strong><a href="https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html">Commande annulée ou retournée (Visa 13.7)</a>.</strong> Pièce 1 : la politique de retour ou d'annulation communiquée et acceptée lors de l'achat, et le fait que le client ne l'a pas suivie. En France, cette politique ne peut pas réduire le droit légal de rétractation du consommateur (voir notre <a href="https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html">guide Visa 13.7</a>).</p>
+<p>Les intitulés Mastercard sont ceux de la documentation Stripe ; la documentation officielle Mastercard n'a pas été consultée.</p>
+<h2>Ce qu'il ne faut pas écrire</h2>
+<ul><li>Des faits non prouvés par une pièce jointe.</li><li>Des accusations contre le client sans élément ; restez factuel.</li><li>Des références juridiques que vous n'avez pas vérifiées. Si vous citez le Code de la consommation, vérifiez le texte sur Légifrance ou faites-vous conseiller.</li><li>Une promesse de résultat à vous-même : Shopify et Stripe rappellent que la banque peut trancher en faveur du client même avec de bonnes preuves.</li></ul>
+<h2>FAQ</h2>
+<p><strong>Dans quelle langue répondre ?</strong> Nous n'avons pas trouvé de règle officielle sur ce point dans les pages consultées. Rédigez clairement ; si votre prestataire indique une langue, suivez-la.</p>
+<p><strong>Puis-je joindre plusieurs fichiers pour une même preuve ?</strong> Chez Stripe, un seul fichier par type de preuve : combinez plusieurs documents en un seul PDF de plusieurs pages. Chez Shopify, suivez le formulaire de votre admin.</p>
+<p><strong>Combien de temps pour répondre ?</strong> En général 7 à 21 jours, selon Shopify et Stripe. La date exacte s'affiche dans votre interface.</p>
+<p><strong>Le modèle suffit-il ?</strong> Non. Il structure votre réponse ; ce sont vos preuves qui comptent, et la décision appartient à la banque.</p>
+<h2>Préparer votre dossier avec l'outil gratuit</h2>
+<p>Nous avons fait un <strong>petit outil gratuit</strong>, sans compte : <a href="https://cdfttchccy-ai.github.io/plaidoo/outil.html">Plaidoo, quelles preuves pour ce motif ?</a>. Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :</p>
+<ul><li>le code de motif tel qu'il apparaît dans votre interface (Visa 13.1, 13.2, 13.3, 13.6, 13.7 ; Mastercard 4855, 4853, 4841, 4860) ;</li><li>le transporteur (Colissimo, Mondial Relay, Chronopost ou autre) ;</li><li>si la commande est un abonnement.</li></ul>
+<p>L'outil vous donne alors :</p>
+<ul><li>une liste des preuves à rassembler ;</li><li>des références du Code de la consommation, avec leur niveau de vérification ;</li><li>un modèle de réponse à trous, à relire, puis à copier ou imprimer.</li></ul>
+<p>Le script tourne dans votre navigateur et ne contacte aucun serveur. L'outil ne soumet rien à votre place et ne couvre pas les litiges pour fraude, American Express ni PayPal. Il ne garantit aucun résultat : c'est la banque du client qui décide.</p>
+<h2>Sources (consultées le 9 octobre 2026)</h2>
+<ul><li>Shopify, « Répondre aux rétrofacturations et aux enquêtes » : <a href="https://help.shopify.com/fr/manual/payments/chargebacks/chargeback-process">https://help.shopify.com/fr/manual/payments/chargebacks/chargeback-process</a></li><li>Stripe, « Respond to disputes » : <a href="https://docs.stripe.com/disputes/responding">https://docs.stripe.com/disputes/responding</a></li><li>Stripe, « Dispute reason codes and defense requirements » : <a href="https://docs.stripe.com/disputes/reason-codes-defense-requirements">https://docs.stripe.com/disputes/reason-codes-defense-requirements</a></li><li>Stripe, tarifs France : <a href="https://stripe.com/fr/pricing">https://stripe.com/fr/pricing</a></li><li>Visa, « Dispute Management Guidelines for Visa Merchants » (juin 2024) : <a href="https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf">https://usa.visa.com/dam/VCOM/global/support-legal/documents/merchants-dispute-management-guidelines.pdf</a></li><li>Service-Public.fr, F10485 (rétractation) : <a href="https://www.service-public.fr/particuliers/vosdroits/F10485">https://www.service-public.fr/particuliers/vosdroits/F10485</a></li></ul>
+<p>Information générale, pas un conseil juridique.</p>
+    </article>
+    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>
+    <p><a href="index.html">Tous les guides</a></p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Ceci n'est pas un conseil juridique. Plaidoo ne garantit aucun résultat.</p>
+      <p><a href="../index.html">Présentation</a> · <a href="../outil.html">Outil</a> · <a href="index.html">Guides</a> · <a href="../sources.html">Sources</a></p>
+      <p><a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../index.html#liste">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

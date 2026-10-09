@@ -209,21 +209,37 @@ for (const file of pages) {
   const html = fs.readFileSync(path.join(root, file), "utf8");
   assert(!html.includes("À COMPLÉTER"), file + " sans placeholder");
   assert(!/note de positionnement|démonstration|maquette/i.test(html), file + " sans wording interne");
-  assert(html.includes('rel="canonical"'), file + " canonical");
+  assert(html.includes('rel="canonical" href="https://cdfttchccy-ai.github.io/plaidoo/'), file + " canonical absolue");
+  assert((html.match(/rel="canonical"/g) || []).length === 1, file + " une seule canonical");
+  assert(!/noindex/i.test(html), file + " sans noindex");
   assert(html.includes('href="guides/index.html"'), file + " lien guides");
 }
+assert(index.includes("<!-- google-site-verification -->"), "marqueur Search Console");
+assert(!/google-site-verification"\s+content=/i.test(index), "pas de jeton Search Console invente");
 
 const guideFiles = fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html")).sort();
-const expectedGuides = [
-  "index.html",
+const sourceSlugs = fs.readdirSync(path.join(root, "guides", "src"))
+  .filter((name) => name.endsWith(".md"))
+  .map((name) => {
+    const raw = fs.readFileSync(path.join(root, "guides", "src", name), "utf8");
+    const slug = raw.match(/^slug:\s*(\S+)/m);
+    return (slug ? slug[1] : name.replace(/\.md$/, "")) + ".html";
+  });
+const expectedGuides = ["index.html", ...sourceSlugs].sort();
+const requiredGuides = [
   "frais-litige-shopify-payments.html",
   "litige-colis-non-recu-shopify.html",
   "litige-visa-13-1.html",
+  "litige-visa-13-2-abonnement-annule.html",
+  "litige-visa-13-6-credit-non-traite.html",
+  "litige-visa-13-7-commande-annulee.html",
+  "modele-reponse-litige-chargeback.html",
   "preuve-livraison-colissimo-litige.html",
   "produit-non-conforme-chargeback.html",
   "stripe-litige-frais-20-euros.html",
 ];
-assert(guideFiles.length === expectedGuides.length && expectedGuides.every((name) => guideFiles.includes(name)), "six guides et l'index");
+assert(guideFiles.length === expectedGuides.length && expectedGuides.every((name) => guideFiles.includes(name)), "guides generes et index");
+requiredGuides.forEach((name) => assert(guideFiles.includes(name), "guide present " + name));
 for (const file of guideFiles) {
   const html = fs.readFileSync(path.join(root, "guides", file), "utf8");
   assert(!/<script[^>]+src="https?:/i.test(html), "guides/" + file + " sans script externe");
@@ -240,6 +256,7 @@ for (const file of guideFiles) {
   assert(html.includes('href="../outil.html"'), "guides/" + file + " lien outil");
   assert(!html.includes("À COMPLÉTER"), "guides/" + file + " sans placeholder");
   assert(!/Payer maintenant|Ajouter au panier|checkout/i.test(html), "guides/" + file + " sans paiement");
+  assert(!/noindex/i.test(html), "guides/" + file + " sans noindex");
   banned.forEach((pattern) => {
     assert(!pattern.test(html), "guides/" + file + " sans " + pattern);
   });
@@ -256,7 +273,7 @@ for (const page of ["outil.html", "a-propos.html", "sources.html", "mentions-leg
 for (const file of expectedGuides) {
   assert(sitemap.includes("https://cdfttchccy-ai.github.io/plaidoo/guides/" + file), "sitemap guides/" + file);
 }
-assert(robots.includes("sitemap.xml"), "robots pointe le sitemap");
+assert(robots.includes("Sitemap: https://cdfttchccy-ai.github.io/plaidoo/sitemap.xml"), "robots pointe le sitemap absolu");
 
 const outilJs = fs.readFileSync(path.join(root, "js/outil.js"), "utf8");
 assert(outilJs.includes("Ceci n'est pas un conseil juridique"), "disclaimer a cote du dossier");

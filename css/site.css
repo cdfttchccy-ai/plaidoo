@@ -1,14 +1,16 @@
 :root {
   --paper: #f3efe4;
   --paper-2: #fffaf3;
-  --ink: #1c1916;
-  --ink-soft: #4a433c;
-  --line: #d5cbbd;
-  --pine: #1b4332;
-  --pine-deep: #10281e;
-  --clay: #8d3428;
-  --gold: #a37b32;
-  --focus: #0b6b4f;
+  --ink: #1B2A4A;
+  --ink-soft: #3E4C66;
+  --line: #d5dbe6;
+  --pine: #1B2A4A;
+  --pine-deep: #121C33;
+  --accent: #10B981;
+  --accent-ink: #047857;
+  --clay: #047857;
+  --gold: #047857;
+  --focus: #1B2A4A;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --shadow: 0 16px 40px rgba(28, 25, 22, 0.08);
@@ -23,7 +25,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(163, 123, 50, 0.08), transparent 28rem),
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.08), transparent 28rem),
     var(--paper);
   font-family: var(--sans);
   font-size: 1.05rem;
@@ -87,10 +89,14 @@ a:hover { color: var(--clay); }
 }
 
 .logo {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: auto;
+  height: 2.75rem;
   display: block;
 }
+
+.logo-footer { height: 2.15rem; }
+
+.footer-logo { margin: 0 0 0.9rem; }
 
 .nav-links {
   display: flex;
@@ -193,7 +199,7 @@ h3 { font-size: 1.25rem; margin: 0 0 0.4rem; }
   color: #f6f1e7;
 }
 
-.band-ink a { color: #f0d7a2; }
+.band-ink a { color: var(--accent); }
 
 .grid-3, .grid-2, .prices {
   display: grid;
@@ -318,14 +324,14 @@ textarea { resize: vertical; min-height: 6rem; }
 }
 
 .disclaimer {
-  border-left: 4px solid var(--clay);
+  border-left: 4px solid var(--pine);
   padding: 0.2rem 0 0.2rem 0.8rem;
 }
 
 .disclaimer-banner {
-  background: #fff6f1;
-  border: 1px solid #e2c2b4;
-  border-left: 4px solid var(--clay);
+  background: #f4f7f8;
+  border: 1px solid #c9d3dc;
+  border-left: 4px solid var(--pine);
   border-radius: 0.9rem;
   padding: 0.9rem 1rem;
   margin: 1rem 0 0;
@@ -360,7 +366,7 @@ legend {
   border-radius: 0.8rem;
 }
 
-.choice:hover { background: rgba(27, 67, 50, 0.05); }
+.choice:hover { background: rgba(27, 42, 74, 0.06); }
 
 .choice input { margin-top: 0.35rem; }
 
@@ -399,7 +405,7 @@ legend {
 
 .flag {
   justify-self: start;
-  color: var(--clay);
+  color: var(--pine);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -415,12 +421,12 @@ legend {
 .warning {
   padding: 0.9rem 1rem;
   margin: 0.8rem 0;
-  border-color: #e2c2b4;
-  background: #fff6f1;
+  border-color: #c9d3dc;
+  background: #f4f7f8;
   box-shadow: none;
 }
 
-.warning h3 { color: var(--clay); }
+.warning h3 { color: var(--pine); }
 
 .letter {
   white-space: pre-wrap;
@@ -462,6 +468,7 @@ legend {
   .grid-2 { grid-template-columns: 1fr 1fr; }
   .prices { grid-template-columns: repeat(4, 1fr); }
   .footer-grid { grid-template-columns: 1.4fr 1fr; }
+  .footer-logo { grid-column: 1 / -1; }
   .tool-layout { grid-template-columns: minmax(18rem, 0.9fr) 1.3fr; align-items: start; }
   .tool-form { position: sticky; top: 5rem; }
   .guide-list { grid-template-columns: 1fr 1fr; }

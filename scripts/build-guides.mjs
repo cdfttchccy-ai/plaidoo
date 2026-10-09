@@ -167,6 +167,7 @@ function chrome(title, description, canonicalPath, main) {
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta name="google-site-verification" content="98Vk93TaFL3eHMyYadHBB7qfbmCop3VCib1PfrkewMw" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeText(title)}</title>

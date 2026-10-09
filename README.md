@@ -48,7 +48,7 @@ Chaque page a une canonical absolue vers `https://cdfttchccy-ai.github.io/plaido
 
 Google ne lit un robots.txt qu'à la racine de l'hôte, `https://cdfttchccy-ai.github.io/robots.txt`. Ce dépôt ne publie pas cette adresse. Le sitemap se déclare donc dans la Search Console, sur une propriété de type préfixe d'URL `https://cdfttchccy-ai.github.io/plaidoo/`.
 
-`index.html` contient le commentaire `<!-- google-site-verification -->` dans le `<head>`. Le remplacer par la balise `<meta name="google-site-verification" content="…">` fournie par la Search Console. Ne pas inventer de jeton. Laisser la balise en place après la validation.
+Chaque page HTML porte dans le `<head>` la balise `google-site-verification` fournie par la Search Console. La laisser en place après la validation.
 
 ## Liste d'attente
 

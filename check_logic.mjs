@@ -214,8 +214,15 @@ for (const file of pages) {
   assert(!/noindex/i.test(html), file + " sans noindex");
   assert(html.includes('href="guides/index.html"'), file + " lien guides");
 }
-assert(index.includes("<!-- google-site-verification -->"), "marqueur Search Console");
-assert(!/google-site-verification"\s+content=/i.test(index), "pas de jeton Search Console invente");
+const siteVerification = '<meta name="google-site-verification" content="98Vk93TaFL3eHMyYadHBB7qfbmCop3VCib1PfrkewMw" />';
+assert(index.includes(siteVerification), "jeton Search Console");
+assert(!index.includes("<!-- google-site-verification -->"), "marqueur remplace");
+for (const file of pages) {
+  assert(fs.readFileSync(path.join(root, file), "utf8").includes(siteVerification), file + " jeton Search Console");
+}
+for (const file of fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html"))) {
+  assert(fs.readFileSync(path.join(root, "guides", file), "utf8").includes(siteVerification), "guides/" + file + " jeton Search Console");
+}
 
 const guideFiles = fs.readdirSync(path.join(root, "guides")).filter((name) => name.endsWith(".html")).sort();
 const sourceSlugs = fs.readdirSync(path.join(root, "guides", "src"))

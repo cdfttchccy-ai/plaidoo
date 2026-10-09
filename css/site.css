@@ -86,22 +86,17 @@ a:hover { color: var(--clay); }
   letter-spacing: -0.03em;
 }
 
-.seal {
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--clay);
-  color: #fff8ef;
-  font-family: var(--serif);
-  font-weight: 700;
-  box-shadow: inset 0 0 0 2px rgba(255, 248, 239, 0.35);
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
 }
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.85rem 1rem;
   align-items: center;
 }
 
@@ -300,7 +295,16 @@ textarea { resize: vertical; min-height: 6rem; }
   clip-path: inset(50%);
 }
 
-.fine-print, .source-list p { color: var(--ink-soft); font-size: 0.92rem; }
+.fine-print, .source-list p, .legal p { color: var(--ink-soft); }
+
+.fine-print, .source-list p { font-size: 0.92rem; }
+
+.legal h2 { margin-top: 1.8rem; }
+
+.legal .disclaimer-banner,
+.legal .disclaimer-banner strong { color: var(--ink); }
+
+.price .tag { margin: 0 0 0.45rem; }
 
 .site-footer {
   padding: 2rem 0 2.6rem;
@@ -435,6 +439,23 @@ legend {
 
 .source-list h2 { font-size: 1.15rem; }
 
+.article { max-width: 48rem; }
+.article h1 { font-size: clamp(1.8rem, 4vw, 2.7rem); }
+.article h2 { margin-top: 1.8rem; font-size: 1.45rem; }
+.article h3 { margin-top: 1.2rem; }
+.article blockquote {
+  margin: 1rem 0;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 4px solid var(--gold);
+  color: var(--ink-soft);
+}
+.article code { font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace; font-size: 0.92em; }
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.article table { min-width: 36rem; background: var(--paper-2); }
+.guide-list { display: grid; gap: 1rem; margin: 1.2rem 0; }
+.guide-list h2 { font-size: 1.35rem; margin: 0 0 0.4rem; }
+.guide-list a { text-decoration: none; }
+
 @media (min-width: 800px) {
   .hero { grid-template-columns: 1.4fr 0.8fr; align-items: center; padding-top: 3rem; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -443,6 +464,7 @@ legend {
   .footer-grid { grid-template-columns: 1.4fr 1fr; }
   .tool-layout { grid-template-columns: minmax(18rem, 0.9fr) 1.3fr; align-items: start; }
   .tool-form { position: sticky; top: 5rem; }
+  .guide-list { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 799px) {

@@ -42,6 +42,14 @@ Pour ajouter un guide :
 2. Lancer `node scripts/build-guides.mjs`.
 3. Committer le Markdown, le HTML généré et `sitemap.xml`.
 
+## Search Console
+
+Chaque page a une canonical absolue vers `https://cdfttchccy-ai.github.io/plaidoo/…`. Le fichier `sitemap.xml` est à la racine du site de projet et ne contient que des URL absolues. `robots.txt` y pointe.
+
+Google ne lit un robots.txt qu'à la racine de l'hôte, `https://cdfttchccy-ai.github.io/robots.txt`. Ce dépôt ne publie pas cette adresse. Le sitemap se déclare donc dans la Search Console, sur une propriété de type préfixe d'URL `https://cdfttchccy-ai.github.io/plaidoo/`.
+
+`index.html` contient le commentaire `<!-- google-site-verification -->` dans le `<head>`. Le remplacer par la balise `<meta name="google-site-verification" content="…">` fournie par la Search Console. Ne pas inventer de jeton. Laisser la balise en place après la validation.
+
 ## Liste d'attente
 
 Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne contiennent ni `fetch`, ni stockage local. Le compteur est une image vers hits.sh.

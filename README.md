@@ -1,6 +1,6 @@
 # Plaidoo — maquette statique
 
-Page de présentation et outil gratuit, en français, pour préparer un dossier de litige commercial (Shopify Payments ou Stripe). Aucun domaine personnalisé. Aucun traceur. La liste d'attente n'est pas ouverte : aucune donnée n'est enregistrée.
+Page de présentation et outil gratuit, en français, pour préparer un dossier de litige commercial (Shopify Payments ou Stripe). Aucun domaine personnalisé. La liste d'attente envoie le formulaire à FormSubmit via un alias masqué. Un compteur anonyme hits.sh mesure la présentation, l'outil et les lettres copiées ou imprimées, sans cookie.
 
 Le nom, le ton et les phrases de la page viennent de la note de positionnement du 9 octobre 2026. Les codes de réseau et les articles du code de la consommation sont ceux vérifiés dans `js/catalog.js`, avec le degré de confiance indiqué sur chaque fiche. Ce n'est pas un conseil juridique.
 
@@ -14,9 +14,10 @@ python3 -m http.server 8765
 
 Puis ouvrir [http://127.0.0.1:8765/](http://127.0.0.1:8765/).
 
-- `index.html` — présentation, comparatif, tarifs indicatifs, foire aux questions, liste d'attente non ouverte
+- `index.html` — présentation, comparatif, tarifs indicatifs, foire aux questions, liste d'attente
 - `outil.html` — motif, transporteur, abonnement, checklist, articles, modèle à copier ou à imprimer
-- `sources.html` — pages consultées
+- `sources.html` — pages consultées et mention du compteur
+- `merci.html` — accusé de la liste d'attente
 
 Aucun outil de construction n'est nécessaire. Les fichiers HTML, CSS et JavaScript sont servis tels quels. Les polices sont celles du système, pour que la page reste lisible hors ligne.
 
@@ -24,7 +25,7 @@ Les scripts sont classiques, pas des modules. Ouvrir `index.html` directement da
 
 ## Liste d'attente
 
-La liste n'est pas ouverte. La page affiche « La liste d'attente ouvre bientôt, aucune donnée n'est enregistrée » et ne propose pas de formulaire. Aucune adresse n'est demandée. Le script ne contient ni `fetch`, ni stockage local.
+Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne contiennent ni `fetch`, ni stockage local. Le compteur est une image vers hits.sh.
 
 ## Contrôle de la logique
 

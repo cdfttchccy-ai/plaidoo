@@ -43,7 +43,7 @@
         <h1>Répondez aux litiges clients avec un dossier solide, en français, sans y passer la soirée.</h1>
         <p class="lead">Plaidoo est conçu pour préparer la réponse aux litiges colis non reçu, produit non conforme, annulation et abonnement, à partir des commandes Shopify ou Stripe et de la preuve de livraison Colissimo ou Mondial Relay. Vous relisez, vous envoyez.</p>
         <div class="actions">
-          <a class="button button-primary" href="#liste">La liste d'attente n'est pas ouverte</a>
+          <a class="button button-primary" href="#liste">Rejoindre la liste d'attente</a>
           <a class="button" href="outil.html">Vérifier un dossier gratuitement</a>
         </div>
         <p class="fine-print">Bêta ouverte aux boutiques françaises. Aucun nombre de places ni de clients n'est affiché&nbsp;: il n'y en a pas encore. L'application Shopify n'est pas installable depuis cette page.</p>
@@ -221,7 +221,7 @@
         </details>
         <details>
           <summary>Où sont mes données&nbsp;?</summary>
-          <p>Sur cette maquette, nulle part ailleurs que dans votre navigateur. Aucune adresse e-mail n'est transmise. Une future application viserait un hébergement dans l'Union européenne et un contrat de sous-traitance (article 28 du RGPD). Ce contrat n'est pas proposé ici.</p>
+          <p>Le dossier de l'outil gratuit est calculé dans votre navigateur. L'adresse laissée sur la liste d'attente est envoyée à FormSubmit (formsubmit.co) pour vous prévenir de l'ouverture, comme indiqué à côté du formulaire. Un compteur anonyme, sans cookie, est décrit sur la page Sources. Une future application viserait un hébergement dans l'Union européenne et un contrat de sous-traitance (article 28 du RGPD). Ce contrat n'est pas proposé ici.</p>
         </details>
         <details>
           <summary>Et la fraude&nbsp;?</summary>
@@ -245,9 +245,26 @@
     <section class="band" id="liste">
       <div class="wrap grid-2">
         <div>
-          <h2>La liste d'attente n'est pas encore ouverte.</h2>
-          <p class="disclaimer disclaimer-banner" role="status">La liste d'attente ouvre bientôt, aucune donnée n'est enregistrée.</p>
-          <p>Il n'y a pas de formulaire. Aucune adresse e-mail n'est demandée, envoyée ou conservée.</p>
+          <h2>Liste d'attente</h2>
+          <p>Laissez une adresse pour être prévenu quand Plaidoo ouvre. Pas de compte.</p>
+          <form class="waitlist" action="https://formsubmit.co/c0b7e8091d90e4e34fab6ebe7dbb1ce9" method="POST">
+            <input type="hidden" name="_subject" value="Plaidoo - liste d'attente">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_next" value="https://cdfttchccy-ai.github.io/plaidoo/merci.html">
+            <input type="hidden" name="_template" value="table">
+            <p class="honey">
+              <label for="champ-miel">Laisser vide</label>
+              <input id="champ-miel" type="text" name="_honey" tabindex="-1" autocomplete="off">
+            </p>
+            <label class="field" for="email">Adresse e-mail
+              <input id="email" type="email" name="email" required autocomplete="email" inputmode="email">
+            </label>
+            <label class="field" for="message">Message <span class="fine-print">(facultatif)</span>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Me prévenir à l'ouverture</button>
+          </form>
+          <p class="rgpd">Cette adresse sert uniquement à vous prévenir de l'ouverture de Plaidoo. Elle est traitée via FormSubmit (formsubmit.co) et conservée jusqu'au lancement, ou jusqu'à ce que vous le demandiez. Pour une suppression, renvoyez ce formulaire en écrivant «&nbsp;suppression&nbsp;» dans le message. Ces données ne sont ni vendues ni partagées.</p>
         </div>
         <div class="panel">
           <h3>En attendant</h3>
@@ -262,14 +279,13 @@
     <div class="wrap footer-grid">
       <div class="disclaimer">
         <p>Ceci n'est pas un conseil juridique. Plaidoo ne garantit aucun résultat. La banque du porteur de la carte tranche le litige.</p>
-        <p>Maquette statique du 9 octobre 2026. Aucun domaine personnalisé, aucun paiement, aucun traceur.</p>
+        <p>Maquette statique du 9 octobre 2026. Aucun domaine personnalisé, aucun paiement. Le compteur anonyme est décrit dans les sources.</p>
       </div>
       <div>
         <p><a href="sources.html">Sources</a> · <a href="outil.html">Outil</a> · <a href="#liste">Liste d'attente</a></p>
-        <p>La liste d'attente n'est pas ouverte&nbsp;: aucune donnée n'est enregistrée.</p>
       </div>
     </div>
   </footer>
-  <script src="js/landing.js"></script>
+  <img class="hit-beacon" alt="" width="1" height="1" src="https://hits.sh/cdfttchccy-ai.github.io/plaidoo/index.svg">
 </body>
 </html>

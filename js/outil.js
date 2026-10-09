@@ -1,4 +1,4 @@
-/* Affiche le dossier. Aucune requête réseau, aucun stockage. */
+/* Affiche le dossier. Le texte reste local. Copier ou imprimer envoie seulement le compteur lettre-generee. */
 (function () {
   "use strict";
 
@@ -35,7 +35,7 @@
 
     var hint = document.createElement("p");
     hint.className = "fine-print";
-    hint.textContent = "Le dossier se met à jour dans la page. Rien n'est envoyé.";
+    hint.textContent = "Le dossier se met à jour dans la page. Le texte n'est pas envoyé.";
     form.appendChild(hint);
     return form;
   }
@@ -306,9 +306,11 @@
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
     copy.addEventListener("click", function () {
+      countGeneratedLetter();
       copyLetter(letter, status);
     });
     print.addEventListener("click", function () {
+      countGeneratedLetter();
       window.print();
     });
     actions.appendChild(copy);
@@ -322,6 +324,11 @@
     wrap.appendChild(actions);
     wrap.appendChild(pre);
     return wrap;
+  }
+
+  function countGeneratedLetter() {
+    var beacon = new Image();
+    beacon.src = "https://hits.sh/cdfttchccy-ai.github.io/plaidoo/lettre-generee.svg";
   }
 
   function copyLetter(letter, status) {

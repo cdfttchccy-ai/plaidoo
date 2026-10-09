@@ -257,7 +257,13 @@ caption {
 
 .faq summary { cursor: pointer; font-weight: 700; }
 
-form.waitlist, .inline-form {
+form.waitlist {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.8rem;
+}
+
+.inline-form {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
@@ -265,15 +271,33 @@ form.waitlist, .inline-form {
   margin-top: 0.8rem;
 }
 
-label.field { display: grid; gap: 0.3rem; font-weight: 700; flex: 1 1 16rem; }
+label.field { display: grid; gap: 0.3rem; font-weight: 700; }
 
-input[type="email"] {
+input[type="email"], textarea {
   font: inherit;
   padding: 0.75rem 0.8rem;
   border-radius: 0.8rem;
   border: 1px solid var(--line);
   background: white;
   color: var(--ink);
+}
+
+textarea { resize: vertical; min-height: 6rem; }
+
+.honey { display: none; }
+
+.rgpd {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin: 0.9rem 0 0;
+}
+
+.hit-beacon {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 .fine-print, .source-list p { color: var(--ink-soft); font-size: 0.92rem; }

@@ -108,10 +108,6 @@ Pour une rétractation, Service-Public indique que le vendeur peut différer le 
 **J'ai déduit les frais de port du remboursement : est-ce un problème ?**
 Le guide Mastercard exclut de ce litige les frais de livraison non remboursés pour un retour par simple changement d'avis. Le droit français peut imposer d'autres règles : faites vérifier ce point.
 
-## Guides liés
-
-[Visa 13.6, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html).
-
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

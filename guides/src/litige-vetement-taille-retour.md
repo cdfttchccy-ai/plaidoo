@@ -23,7 +23,7 @@ En mode, trois situations peuvent mener à un litige bancaire : le vêtement ne 
 
 Côté Mastercard, le guide pour les marchands (édition du 13 mai 2025) regroupe ces cas sous le motif **4853 « Cardholder Dispute »**. Nous n'y avons trouvé aucune occurrence des codes 4855, 4841 ou 4860, que Stripe affiche pourtant encore. **Lisez le récit du litige** plutôt que le seul numéro.
 
-Pour le colis jamais reçu, voyez nos guides [Visa 13.1](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html) et [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html). Cet article traite des deux premiers cas.
+Pour le colis jamais reçu, voyez nos guides Visa 13.1 et Mastercard 4855. Cet article traite des deux premiers cas.
 
 ## Cas 1 : « la taille ne correspond pas »
 
@@ -88,7 +88,7 @@ Points utiles pour la mode, toujours selon F10485 :
 
 Deux conséquences. Même si la règle Mastercard exclut du litige les frais de livraison non remboursés, F10485 indique qu'en cas de rétractation le vendeur rembourse les frais de livraison initiaux. Et, selon la même fiche, un remboursement en avoir suppose l'accord exprès du client.
 
-**La conformité.** Si l'article est réellement non conforme, la garantie légale de conformité s'applique (fiche F11094) : réparation ou remplacement, à défaut réduction du prix ou remboursement. Voir notre [guide produit non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html).
+**La conformité.** Si l'article est réellement non conforme, la garantie légale de conformité s'applique (fiche F11094) : réparation ou remplacement, à défaut réduction du prix ou remboursement. Voir notre guide « Produit non conforme ».
 
 Ces règles sont présentées via Service-Public. Faites-les vérifier par un professionnel du droit.
 
@@ -118,10 +118,6 @@ Joignez des photos de l'état à réception. Service-Public mentionne une respon
 
 **Le client a renvoyé le colis sans rien écrire : est-ce une rétractation ?**
 Selon F10485, le simple renvoi sans déclaration ne suffit pas. Contactez quand même le client avant tout litige.
-
-## Guides liés
-
-[Produit non conforme (Visa 13.3, Mastercard 4853)](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [Visa 13.6, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [Visa 13.7, commande annulée](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

@@ -299,6 +299,18 @@ const requiredGuides = [
   "preuve-livraison-colissimo-litige.html",
   "produit-non-conforme-chargeback.html",
   "stripe-litige-frais-20-euros.html",
+  "enquete-ou-retrofacturation-shopify.html",
+  "libelle-releve-bancaire-shopify-payments.html",
+  "litige-paypal-shopify-payments-france.html",
+  "programme-ndrp-shopify-payments.html",
+  "protection-marchands-paypal-article-non-recu.html",
+  "repondre-litige-stripe-dashboard.html",
+];
+const noToolCta = [
+  "libelle-releve-bancaire-shopify-payments.html",
+  "litige-paypal-shopify-payments-france.html",
+  "programme-ndrp-shopify-payments.html",
+  "protection-marchands-paypal-article-non-recu.html",
 ];
 assert(guideFiles.length === expectedGuides.length && expectedGuides.every((name) => guideFiles.includes(name)), "guides generes et index");
 requiredGuides.forEach((name) => assert(guideFiles.includes(name), "guide present " + name));
@@ -316,9 +328,18 @@ for (const file of guideFiles) {
   assert(html.includes('property="og:title"'), "guides/" + file + " og");
   assert(html.includes('name="description"'), "guides/" + file + " description");
   assert(html.includes('href="../outil.html"'), "guides/" + file + " lien outil");
+  if (file !== "index.html" && noToolCta.includes(file)) {
+    assert(!html.includes("Ouvrir l'outil gratuit"), "guides/" + file + " sans bouton outil");
+    assert(!html.includes("https://cdfttchccy-ai.github.io/plaidoo/outil.html"), "guides/" + file + " sans encart outil");
+    const raw = fs.readFileSync(path.join(root, "guides", "src", file.replace(/\.html$/, ".md")), "utf8");
+    assert(/^priority:\s*P3\s*$/m.test(raw), "guides/" + file + " priority P3");
+  } else if (file !== "index.html") {
+    assert(html.includes("Ouvrir l'outil gratuit"), "guides/" + file + " bouton outil");
+  }
+  assert(!/prévoit de retirer|retirer à terme|susceptible d'être basculé|codes seront retirés/i.test(html), "guides/" + file + " sans retrait des codes");
   assert(html.includes('href="../sitemap.xml"') && html.includes(">Plan du site</a>"), "guides/" + file + " plan du site");
   assert(!html.includes("À COMPLÉTER"), "guides/" + file + " sans placeholder");
-  assert(!/Payer maintenant|Ajouter au panier|checkout/i.test(html), "guides/" + file + " sans paiement");
+  assert(!/Payer maintenant|Ajouter au panier|checkout/i.test(html.replace(/Shopify Checkout/g, "")), "guides/" + file + " sans paiement");
   assert(!/noindex/i.test(html), "guides/" + file + " sans noindex");
   banned.forEach((pattern) => {
     assert(!pattern.test(html), "guides/" + file + " sans " + pattern);
@@ -344,8 +365,12 @@ sitemapUrls.forEach((block) => {
 for (const page of ["outil.html", "a-propos.html", "sources.html", "mentions-legales.html", "confidentialite.html", "merci.html", "plan-du-site.html"]) {
   assert(sitemap.includes(page), "sitemap " + page);
 }
+const plan = fs.readFileSync(path.join(root, "plan-du-site.html"), "utf8");
 for (const file of expectedGuides) {
   assert(sitemap.includes("https://cdfttchccy-ai.github.io/plaidoo/guides/" + file), "sitemap guides/" + file);
+  if (file !== "index.html") {
+    assert(plan.includes("guides/" + file), "plan du site " + file);
+  }
   if (file !== "index.html") {
     const raw = fs.readFileSync(path.join(root, "guides", "src", file.replace(/\.html$/, ".md")), "utf8");
     const date = raw.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);

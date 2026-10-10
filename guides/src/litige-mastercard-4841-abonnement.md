@@ -122,10 +122,6 @@ Non, selon le guide Mastercard, cette seule déclaration ne suffit pas. Joignez 
 **Le code affiché est 4853 mais il s'agit d'un abonnement : quel guide suivre ?**
 Celui-ci : Mastercard range ces cas sous 4853.
 
-## Guides liés
-
-[Visa 13.2, abonnement annulé](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [abonnements Shopify](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-abonnement-shopify-subscriptions.html).
-
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

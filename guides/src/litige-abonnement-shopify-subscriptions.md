@@ -11,7 +11,7 @@ Information générale, pas un conseil juridique.
 
 > Sources officielles consultées les 9 et 10 octobre 2026, listées en fin d'article. Les règles peuvent changer et varier selon votre région ou votre prestataire de paiement : vérifiez-les avant d'agir. Le guide Mastercard cité est la « Chargeback Guide – Merchant Edition » du 13 mai 2025, en anglais ; les traductions sont les nôtres. Les textes de loi cités le sont via Service-Public.fr et n'ont pas été relus sur Légifrance.
 
-Vous vendez par abonnement sur Shopify, avec l'appli Shopify Subscriptions ou une appli tierce. Les litiges « abonnement annulé » se gagnent ou se perdent souvent **avant** le litige : sur ce que le client a vu au paiement, sur la facilité d'annuler, et sur les traces que vous gardez. Ce guide part des réglages décrits dans le Centre d'aide Shopify, puis montre comment ils servent de preuves. Pour le détail des motifs, voyez nos guides [Visa 13.2](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html) et [Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html).
+Vous vendez par abonnement sur Shopify, avec l'appli Shopify Subscriptions ou une appli tierce. Les litiges « abonnement annulé » se gagnent ou se perdent souvent **avant** le litige : sur ce que le client a vu au paiement, sur la facilité d'annuler, et sur les traces que vous gardez. Ce guide part des réglages décrits dans le Centre d'aide Shopify, puis montre comment ils servent de preuves. Pour le détail des motifs, voyez nos guides Visa 13.2 et Mastercard 4841.
 
 ## Les motifs de litige concernés
 
@@ -104,10 +104,6 @@ Non. Selon Shopify, ce texte ne peut être supprimé, quel que soit le forfait.
 
 **Un client dit avoir supprimé sa carte pour arrêter l'abonnement : que répondre ?**
 Selon Shopify, supprimer une carte Shop Pay n'annule pas les abonnements. Montrez l'absence de demande d'annulation, mais envisagez un geste si le client était de bonne foi.
-
-## Guides liés
-
-[Visa 13.2, abonnement annulé](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html), [Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

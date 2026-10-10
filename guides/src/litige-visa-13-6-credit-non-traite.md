@@ -25,7 +25,7 @@ Les causes les plus fréquentes selon Visa :
 
 Stripe décrit le même motif : un client attendait un remboursement qui n'a pas été émis ou traité correctement, par exemple un remboursement accepté mais pas exécuté, ou un crédit qui n'apparaît pas sur son relevé dans un délai raisonnable.
 
-Chez Mastercard, le code voisin est **4860** (« Credit Not Processed »), d'après la documentation Stripe. Le guide marchand Mastercard du 13 mai 2025 range ce cas sous le 4853 : voir le [guide Mastercard 4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html).
+Chez Mastercard, le code voisin est **4860** (« Credit Not Processed »), d'après la documentation Stripe. La documentation officielle de Mastercard n'a pas été consultée.
 
 ## Que répondre selon Visa
 
@@ -88,8 +88,6 @@ Pour une rétractation, Service-Public indique que le vendeur peut différer le 
 
 **Un remboursement partiel suffit-il ?**
 Visa demande le montant du crédit traité. Si le crédit ne couvre pas tout ce qui est réclamé, expliquez pourquoi, preuves à l'appui.
-
-Guides liés : [Visa 13.7, commande annulée ou retournée](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html), [Mastercard 4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html), [modèle de réponse à un litige](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

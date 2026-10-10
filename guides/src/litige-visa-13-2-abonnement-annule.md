@@ -22,7 +22,7 @@ Le guide Visa pour les marchands (juin 2024) intitule la condition 13.2 « Cance
 
 Causes citées par Visa : retrait de l'autorisation par le client, carte annulée par le client ou par sa banque, prélèvement effectué après avoir été informé de la fermeture du compte.
 
-Chez Mastercard, le code voisin est **4841** (« Canceled Recurring or Digital Goods Transactions »), d'après la documentation Stripe. Le guide marchand Mastercard du 13 mai 2025 range ce cas sous le 4853 : voir le [guide Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html).
+Chez Mastercard, le code voisin est **4841** (« Canceled Recurring or Digital Goods Transactions »), d'après la documentation Stripe. La documentation officielle de Mastercard n'a pas été consultée.
 
 ## Que répondre selon Visa
 
@@ -108,9 +108,7 @@ Stripe cite les journaux montrant la date et l'heure exactes de l'annulation, po
 Service-Public décrit une résiliation en ligne en 3 étapes pour les contrats conclus par voie électronique. Faites vérifier votre parcours par un juriste.
 
 **Quelle différence avec Visa 13.7 ?**
-Le 13.2 vise un prélèvement récurrent après retrait de l'autorisation. Le 13.7 vise un achat annulé ou un article retourné dont le crédit n'apparaît pas. Voir notre [guide Visa 13.7](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html). Une trame à trous est dans le [modèle de réponse](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
-
-Guides liés : [Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [abonnements Shopify](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-abonnement-shopify-subscriptions.html).
+Le 13.2 vise un prélèvement récurrent après retrait de l'autorisation. Le 13.7 vise un achat annulé ou un article retourné dont le crédit n'apparaît pas. Voir notre guide 13.7.
 
 ## Préparer votre dossier avec l'outil gratuit
 

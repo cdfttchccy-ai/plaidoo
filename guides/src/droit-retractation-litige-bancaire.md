@@ -95,10 +95,6 @@ Non. Selon F10485, il n'a pas à se justifier.
 **Ma politique dit « échange uniquement » : puis-je la faire valoir ?**
 Face à la banque, Visa et Mastercard tiennent compte d'une politique correctement présentée. Mais, selon F10485, un avoir n'est possible qu'avec l'accord exprès du client en cas de rétractation. Faites vérifier votre politique.
 
-## Guides liés
-
-[Visa 13.7, commande annulée ou retournée](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html), [Visa 13.6, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [Mastercard 4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [Visa 13.2, abonnement annulé](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html), [taille, retour ou article non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-vetement-taille-retour.html).
-
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

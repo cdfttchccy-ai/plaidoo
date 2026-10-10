@@ -101,10 +101,6 @@ Aucune source officielle consultée ne le prévoit clairement pour un colis non 
 **Le colis est toujours au relais : que répondre ?**
 Visa prévoit une réponse quand la date de livraison n'est pas encore passée. Indiquez que le colis est disponible et jusqu'à quand, preuves à l'appui.
 
-## Guides liés
-
-[Visa 13.1, marchandise non reçue](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html), [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [colis non reçu sur Shopify](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-colis-non-recu-shopify.html), [preuve de livraison Colissimo](https://cdfttchccy-ai.github.io/plaidoo/guides/preuve-livraison-colissimo-litige.html).
-
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

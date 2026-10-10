@@ -35,7 +35,7 @@ Les sources sont des fichiers Markdown dans `guides/src/`. Chaque fichier commen
 node scripts/build-guides.mjs
 ```
 
-Le script écrit `guides/index.html`, `guides/<slug>.html`, et réécrit `sitemap.xml` (lastmod du frontmatter pour chaque guide). Chaque page affiche la mention « Information générale, pas un conseil juridique » et la date « Mis à jour le », prise du frontmatter (sinon le 9 octobre 2026). Dix-huit notes sont publiées, dont les codes Mastercard et quatre notes du 10 octobre 2026 sur la taille et le retour, le point relais, la rétractation et les abonnements Shopify.
+Le script écrit `guides/index.html`, `guides/<slug>.html`, et réécrit `sitemap.xml` (lastmod du frontmatter pour chaque guide). Chaque page affiche la mention « Information générale, pas un conseil juridique » et la date « Mis à jour le », prise du frontmatter (sinon le 9 octobre 2026). Vingt-quatre notes sont publiées. Quatre d'entre elles portent `priority: P3` dans le frontmatter (PayPal, protection des marchands PayPal, libellé de relevé, programme NDRP) : le script n'y ajoute pas le bouton vers l'outil. La navigation du site vers l'outil reste en place.
 
 Pour ajouter un guide :
 

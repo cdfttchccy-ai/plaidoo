@@ -231,6 +231,17 @@ ${main}
 `;
 }
 
+const informativeSlugs = new Set([
+  "libelle-releve-bancaire-shopify-payments",
+  "litige-paypal-shopify-payments-france",
+  "programme-ndrp-shopify-payments",
+  "protection-marchands-paypal-article-non-recu",
+]);
+
+function hidesToolCta(guide) {
+  return guide.priority === "P3" || informativeSlugs.has(guide.slug);
+}
+
 const guides = fs.readdirSync(srcDir)
   .filter((name) => name.endsWith(".md"))
   .map((name) => parseFile(path.join(srcDir, name)))
@@ -246,13 +257,13 @@ const latestGuideDate = guides.reduce((max, guide) => (guide.date > max ? guide.
 
 const indexHtml = chrome(
   "Guides — Plaidoo",
-  "Notes sur les litiges Shopify Payments et Stripe : frais, colis, point relais, Visa, Mastercard, rétractation, abonnements, taille et retour, Colissimo, modèle de réponse. Information générale.",
+  "Vingt-quatre notes sur les litiges Shopify Payments et Stripe : frais, colis, Visa, Mastercard, PayPal, enquête, relevé, NDRP. Information générale.",
   "/guides/index.html",
   `    <p class="eyebrow">Guides</p>
     <h1>Comprendre un litige, sans promesse de gain.</h1>
     <p class="disclaimer disclaimer-banner" role="note"><strong>Information générale, pas un conseil juridique.</strong> Ceci n'est pas un conseil juridique. Les règles citées peuvent changer.</p>
     <p class="fine-print">Mis à jour le ${frenchDate(latestGuideDate)}.</p>
-    <p class="lead">Dix-huit notes rédigées à partir de pages officielles consultées les 9 et 10 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
+    <p class="lead">Vingt-quatre notes rédigées à partir de pages officielles consultées les 9 et 10 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
     <div class="guide-list">
 ${cards}
     </div>
@@ -272,8 +283,7 @@ for (const guide of guides) {
     <article>
 ${guide.html}
     </article>
-    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>
-    <p><a href="index.html">Tous les guides</a></p>`
+${hidesToolCta(guide) ? "" : `    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>\n`}    <p><a href="index.html">Tous les guides</a></p>`
   );
   fs.writeFileSync(path.join(outDir, `${guide.slug}.html`), page);
 }

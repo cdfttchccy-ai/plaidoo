@@ -111,10 +111,6 @@ Rien ne le garantit. Mastercard cite des preuves de **réception** (signature, p
 **Le colis est bloqué en douane : que faire ?**
 Le guide Mastercard exclut ce litige quand les biens sont retenus faute de paiement des droits par le client. Documentez le blocage et ce que le client devait payer.
 
-## Guides liés
-
-[Visa 13.1, marchandise non reçue](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [preuve de livraison Colissimo](https://cdfttchccy-ai.github.io/plaidoo/guides/preuve-livraison-colissimo-litige.html), [colis en point relais non retiré](https://cdfttchccy-ai.github.io/plaidoo/guides/colis-point-relais-non-retire-litige.html).
-
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

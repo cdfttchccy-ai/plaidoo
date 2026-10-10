@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="google-site-verification" content="98Vk93TaFL3eHMyYadHBB7qfbmCop3VCib1PfrkewMw" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Répondre à un litige Stripe depuis le Dashboard — Plaidoo</title>
+  <meta name="description" content="Litige Stripe : lire la réclamation, accepter ou contester, remplir le formulaire de réponse et joindre les bonnes pièces depuis le Dashboard, étape par étape.">
+  <link rel="canonical" href="https://cdfttchccy-ai.github.io/plaidoo/guides/repondre-litige-stripe-dashboard.html">
+  <meta property="og:title" content="Répondre à un litige Stripe depuis le Dashboard — Plaidoo">
+  <meta property="og:description" content="Litige Stripe : lire la réclamation, accepter ou contester, remplir le formulaire de réponse et joindre les bonnes pièces depuis le Dashboard, étape par étape.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cdfttchccy-ai.github.io/plaidoo/guides/repondre-litige-stripe-dashboard.html">
+  <meta property="og:image" content="https://cdfttchccy-ai.github.io/plaidoo/og.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Répondre à un litige Stripe depuis le Dashboard — Plaidoo">
+  <meta name="twitter:description" content="Litige Stripe : lire la réclamation, accepter ou contester, remplir le formulaire de réponse et joindre les bonnes pièces depuis le Dashboard, étape par étape.">
+  <meta name="twitter:image" content="https://cdfttchccy-ai.github.io/plaidoo/og.png">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="icon" href="../favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img class="logo" src="../logo.svg" alt="Plaidoo" width="156" height="53"></a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="../index.html">Présentation</a>
+        <a href="../outil.html">Outil</a>
+        <a href="../index.html#tarifs">Tarifs</a>
+        <a href="index.html">Guides</a>
+        <a href="../a-propos.html">À propos</a>
+      </nav>
+      <details class="nav-drawer">
+        <summary>Menu</summary>
+        <nav aria-label="Menu mobile">
+          <a href="../index.html">Présentation</a>
+          <a href="../outil.html">Outil</a>
+          <a href="../index.html#tarifs">Tarifs</a>
+          <a href="index.html">Guides</a>
+          <a href="../a-propos.html">À propos</a>
+          <a href="../sources.html">Sources</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="contenu" class="wrap band article">
+    <p class="eyebrow"><a href="index.html">Guides</a></p>
+    <p class="disclaimer disclaimer-banner" role="note"><strong>Information générale, pas un conseil juridique.</strong> Ceci n'est pas un conseil juridique.</p>
+    <p class="fine-print">Mis à jour le 10 octobre 2026.</p>
+    <article>
+<p>Information générale, pas un conseil juridique.</p>
+<h1>Répondre à un litige Stripe depuis le Dashboard</h1>
+<blockquote><p>Sources officielles consultées les 9 et 10 octobre 2026, listées en fin d'article. Les règles peuvent changer et varier selon votre région ou votre prestataire de paiement : vérifiez-les avant d'agir. Les citations en anglais sont traduites par nos soins.</p></blockquote>
+<p>Un paiement Stripe est contesté. Vous recevez un e-mail, le litige apparaît dans le Dashboard, et un compte à rebours démarre. Ce guide suit la page officielle de Stripe « Respond to disputes » : où lire la réclamation, comment choisir entre accepter et contester, et comment remplir le formulaire sans gâcher votre unique envoi.</p>
+<h2>1. Repérer le litige et la date limite</h2>
+<p>Selon Stripe, vous êtes prévenu par e-mail, dans le Dashboard, par l'événement <code>charge.dispute.created</code> si votre intégration écoute les événements, et par notification push si vous y êtes abonné. La liste complète se trouve dans l'onglet <strong>Disputes</strong> (Litiges) du Dashboard.</p>
+<p>Le délai de réponse est <strong>limité, en général de 7 à 21 jours selon le réseau de cartes</strong>. Sans réponse avant l'échéance, Stripe indique que vous <strong>perdez automatiquement</strong> le litige et ne pouvez pas récupérer les fonds.</p>
+<h2>2. Lire la catégorie et la réclamation</h2>
+<p>Chaque litige porte une <strong>catégorie</strong> (le champ <code>reason</code> de l'objet Dispute). Stripe recommande de commencer par ses consignes de réponse pour cette catégorie : elles indiquent quelles preuves rassembler.</p>
+<p>Quand c'est possible, la page de détail du litige fournit <strong>une copie de la soumission de la banque</strong>, avec parfois la description du client. Stripe conseille d'y répondre point par point. Si ces fichiers sont disponibles, ils s'ouvrent via <strong>Review the claim details</strong> à l'étape 1 de la checklist.</p>
+<p>Attention au numéro de motif : pour Mastercard, le guide officiel pour les marchands (édition du 13 mai 2025) regroupe les litiges clients sous le motif <strong>4853 « Cardholder Dispute »</strong>, alors que Stripe peut encore afficher 4855, 4841 ou 4860. Lisez le récit plutôt que le seul code.</p>
+<h2>3. Cas particuliers à repérer</h2>
+<ul><li><strong>Inquiry (demande d'information)</strong> : elle apparaît comme un paiement contesté, mais Stripe la décrit comme une étape <strong>avant</strong> le litige formel. Y répondre peut éviter l'escalade. Si elle devient un litige, il faut <strong>répondre à nouveau</strong>. Stripe précise qu'<strong>accepter</strong> une inquiry ne la résout pas : il faut soumettre des preuves.</li><li><strong>Litige de conformité Visa ou Mastercard</strong> : si vous le contestez, Stripe prélève <strong>500 USD</strong> (ou l'équivalent local) en plus des frais de litige, remboursés si vous gagnez.</li><li><strong>Fraude</strong> : pour Visa 10.4, Stripe évalue automatiquement l'éligibilité à <strong>Compelling Evidence 3.0</strong> ; en cas de <strong>transfert de responsabilité</strong> lié à 3D Secure, Stripe fournit automatiquement une partie des preuves.</li></ul>
+<h2>4. Contacter le client</h2>
+<p>La page de détail peut proposer d'<strong>envoyer un e-mail au client</strong>. Stripe le recommande : cela aide à comprendre la plainte, et parfois à obtenir le <strong>retrait</strong> du litige après une solution amiable (avoir, remplacement). Gardez une trace de tous les échanges : ils serviront de preuves.</p>
+<h2>5. Accepter ou contester</h2>
+<p>Stripe rappelle que la banque a <strong>déjà remboursé</strong> le client : répondre au litige est le seul moyen de tenter de récupérer les fonds. Avant de choisir, vérifiez si la réclamation est fondée.</p>
+<ul><li><strong>Accept dispute</strong> : vous indiquez à la banque que vous ne contestez pas.</li><li><strong>Counter dispute</strong> : un formulaire vous guide.</li></ul>
+<p><strong>Frais en France</strong> (voir notre guide sur les frais Stripe) : 20 € par litige reçu, plus 20 € si vous contestez ; Stripe rembourse les frais de contestation si vous gagnez, mais pas, sauf contrat contraire, les frais de litige reçu. La banque peut mettre <strong>jusqu'à 3 mois</strong> à décider.</p>
+<h2>6. Remplir le formulaire de contestation</h2>
+<p>Stripe insiste : <strong>vous n'avez qu'une seule soumission</strong>. Après l'envoi, impossible de modifier ou d'ajouter un fichier.</p>
+<ol><li><strong>Page 1 — le contexte</strong> : pourquoi le litige vous semble infondé, et le <strong>type de produit</strong> (physique, numérique, service). Stripe s'en sert pour proposer les preuves pertinentes.</li><li><strong>Page 2 — les preuves</strong> : dans <strong>Supporting Files</strong>, téléversez les pièces et indiquez pour chacune le <strong>type de preuve</strong> qu'elle couvre. <strong>Un seul fichier par type</strong> : regroupez plusieurs documents en un PDF multipage.</li><li><strong>Les sections de contexte</strong> (livraison, politique de remboursement, client, produit) : Stripe les préremplit quand l'intégration le permet ; complétez les champs vides.</li><li><strong>Envoi</strong> : cochez la case reconnaissant que la réponse est définitive, puis soumettez. Stripe met les preuves au format attendu par la banque.</li></ol>
+<h2>Les limites techniques à respecter</h2>
+<p>Selon Stripe :</p>
+<ul><li><strong>4,5 Mo</strong> au total pour les fichiers ;</li><li><strong>19 pages</strong> au total pour les preuves d'un litige <strong>Mastercard</strong> ;</li><li>pas de <strong>fichiers audio ou vidéo</strong>, pas de demande de <strong>rappel</strong>, pas de <strong>liens</strong> à cliquer (téléchargements, suivi de colis) : la banque ne consulte pas de contenu externe.</li></ul>
+<p>Conséquence pratique : faites des <strong>captures d'écran</strong> du suivi plutôt que de coller un lien, et mettez les pièces les plus fortes en premier.</p>
+<h2>7. Suivre la décision</h2>
+<p>Après l'envoi, le statut passe à <strong>under review</strong>. Stripe vous informe ensuite par e-mail, par l'événement <code>charge.dispute.closed</code> et dans le Dashboard :</p>
+<ul><li><strong>won</strong> : la banque vous donne raison et le montant vous revient ;</li><li><strong>lost</strong> : le remboursement au client est définitif.</li></ul>
+<p>La banque fournit parfois des explications, visibles via <strong>View issuing bank response</strong> dans les documents du litige.</p>
+<p>Un même paiement peut avoir <strong>plusieurs litiges</strong> : Stripe conseille de répondre à chacun séparément.</p>
+<h2>Check-list avant d'envoyer</h2>
+<ul><li>[ ] J'ai lu la réclamation de la banque et la catégorie.</li><li>[ ] J'ai contacté le client et gardé les échanges.</li><li>[ ] Chaque fichier correspond à un type de preuve, un seul fichier par type.</li><li>[ ] Total sous 4,5 Mo (et 19 pages pour Mastercard).</li><li>[ ] Aucun lien, aucun audio ni vidéo.</li><li>[ ] Les pièces les plus fortes sont en tête.</li><li>[ ] J'ai relu : l'envoi est définitif.</li></ul>
+<h2>FAQ</h2>
+<p><strong>Puis-je compléter ma réponse après l'envoi ?</strong> Non. Stripe transmet immédiatement la réponse et les fichiers, sans modification possible.</p>
+<p><strong>Accepter une inquiry la clôt-elle ?</strong> Non, selon Stripe : il faut soumettre des preuves pour y répondre.</p>
+<p><strong>Combien de temps pour la décision ?</strong> Jusqu'à 3 mois après la contestation, selon Stripe.</p>
+<h2>Préparer votre dossier avec l'outil gratuit</h2>
+<p>Nous avons fait un <strong>petit outil gratuit</strong>, sans compte : <a href="https://cdfttchccy-ai.github.io/plaidoo/outil.html">Plaidoo, quelles preuves pour ce motif ?</a>. Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :</p>
+<ul><li>le code de motif tel qu'il apparaît dans votre interface (Visa 13.1, 13.2, 13.3, 13.6, 13.7 ; Mastercard 4855, 4853, 4841, 4860) ;</li><li>le transporteur (Colissimo, Mondial Relay, Chronopost ou autre) ;</li><li>si la commande est un abonnement.</li></ul>
+<p>L'outil vous donne alors :</p>
+<ul><li>une liste des preuves à rassembler ;</li><li>des références du Code de la consommation, avec leur niveau de vérification ;</li><li>un modèle de réponse à trous, à relire, puis à copier ou imprimer.</li></ul>
+<p>Le dossier est assemblé dans votre navigateur : son contenu n'est envoyé nulle part. Le site signale un compteur anonyme de visites et de lettres générées (service Abacus), décrit sur sa page Sources. L'outil ne soumet rien à votre place et ne couvre pas les litiges pour fraude, American Express ni PayPal. Il ne garantit aucun résultat : c'est la banque du client qui décide.</p>
+<h2>Sources (consultées les 9 et 10 octobre 2026)</h2>
+<ul><li>Stripe, « Respond to disputes » : <a href="https://docs.stripe.com/disputes/responding">https://docs.stripe.com/disputes/responding</a></li><li>Stripe, tarifs France : <a href="https://stripe.com/fr/pricing">https://stripe.com/fr/pricing</a></li><li>Stripe, « Dispute reason code categories » : <a href="https://docs.stripe.com/disputes/categories">https://docs.stripe.com/disputes/categories</a></li><li>Stripe, « Dispute reason codes » : <a href="https://docs.stripe.com/disputes/reason-codes-defense-requirements">https://docs.stripe.com/disputes/reason-codes-defense-requirements</a></li><li>Mastercard, « Chargeback Guide – Merchant Edition » (13 mai 2025) : <a href="https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/chargeback-guide.pdf">https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/chargeback-guide.pdf</a></li></ul>
+<p>Information générale, pas un conseil juridique.</p>
+    </article>
+    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>
+    <p><a href="index.html">Tous les guides</a></p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-logo"><a href="../index.html"><img class="logo logo-footer" src="../logo.svg" alt="Plaidoo" width="132" height="45"></a></p>
+      <p>Ceci n'est pas un conseil juridique. Plaidoo ne garantit aucun résultat.</p>
+      <p><a href="../index.html">Présentation</a> · <a href="../outil.html">Outil</a> · <a href="index.html">Guides</a> · <a href="../sources.html">Sources</a></p>
+      <p><a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../index.html#liste">Contact</a> · <a href="../sitemap.xml">Plan du site</a></p>
+    </div>
+  </footer>
+</body>
+</html>

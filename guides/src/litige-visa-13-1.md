@@ -23,7 +23,7 @@ Visa cite trois causes fréquentes :
 - la marchandise n'était pas disponible au retrait au lieu ou à la date convenus ;
 - les services n'étaient pas disponibles ou n'ont pas été fournis.
 
-Chez Mastercard, le motif voisin est le code **4855** (« Goods or Services Not Provided »), d'après la documentation Stripe sur les codes de motif. Le guide marchand Mastercard du 13 mai 2025 range ce cas sous le 4853 : voir le [guide Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html).
+Chez Mastercard, le motif voisin est le code **4855** (« Goods or Services Not Provided »), d'après la documentation Stripe sur les codes de motif. Nous n'avons pas consulté la documentation officielle de Mastercard.
 
 Ce guide Visa est publié sur le site américain de Visa. Les règles applicables à votre transaction peuvent dépendre de votre région et de votre prestataire : en cas de doute, renseignez-vous auprès de lui.
 
@@ -100,15 +100,13 @@ Shopify ajoute pour les commandes de grande valeur : exiger une signature à la 
 Visa demande de prouver que le titulaire ou une personne autorisée a reçu la marchandise. Une signature, un code de retrait ou une photo est plus solide qu'un simple statut. La banque reste libre de sa décision.
 
 **Quelle est la différence entre Visa 13.1 et Mastercard 4855 ?**
-Les deux couvrent la marchandise ou le service non fourni, d'après Stripe. Le détail du guide Mastercard est dans le [guide 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html).
+Les deux couvrent la marchandise ou le service non fourni, d'après Stripe. Les exigences de preuve exactes de Mastercard n'ont pas été vérifiées ici.
 
 **Puis-je encore rembourser le client ?**
 Avec Shopify Payments, la page d'aide en anglais indique qu'un paiement ne peut plus être remboursé via Shopify une fois la rétrofacturation lancée. Pendant une enquête, un remboursement intégral reste possible. Avec Stripe, vérifiez dans votre tableau de bord les options proposées pour votre litige.
 
 **Combien coûte un litige ?**
 En France : 15 EUR avec Shopify Payments, remboursés si vous gagnez. Avec Stripe : 20 € par litige reçu, plus 20 € si vous y répondez manuellement (ce second montant est remboursé si vous gagnez). Voir nos articles dédiés.
-
-Guides liés : [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [colis en point relais non retiré](https://cdfttchccy-ai.github.io/plaidoo/guides/colis-point-relais-non-retire-litige.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

@@ -119,11 +119,7 @@ Le guide Mastercard exige que le client ait contacté le marchand, ou tenté de 
 Pour des biens, Mastercard demande que le client ait signalé qu'ils étaient disponibles pour reprise ou retour. Exposez les faits, mais tenez compte de la garantie légale de conformité.
 
 **Le litige 4853 concerne en fait un colis non reçu : que faire ?**
-Suivez notre [guide 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html) : les preuves attendues sont des preuves de remise.
-
-## Guides liés
-
-[Visa 13.3, produit non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html), [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [Mastercard 4841, abonnement](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [Mastercard 4860, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [taille, retour ou article non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-vetement-taille-retour.html).
+Suivez notre guide 4855 : les preuves attendues sont des preuves de remise.
 
 ## Préparer votre dossier avec l'outil gratuit
 

@@ -59,17 +59,17 @@ Copiez la trame, remplacez chaque [crochet] et supprimez les blocs qui ne s'appl
 
 ## Comment remplir la trame selon le motif
 
-**[Produit non reçu (Visa 13.1, Mastercard 4855)](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html).** Pièce 1 : la confirmation de livraison, « idéalement avec une signature ou une photo » selon Shopify, et la concordance avec l'adresse de la commande. Visa demande de prouver que le titulaire ou une personne autorisée a reçu ou retiré la marchandise.
+**Produit non reçu (Visa 13.1, Mastercard 4855).** Pièce 1 : la confirmation de livraison, « idéalement avec une signature ou une photo » selon Shopify, et la concordance avec l'adresse de la commande. Visa demande de prouver que le titulaire ou une personne autorisée a reçu ou retiré la marchandise.
 
-**[Non conforme ou défectueux (Visa 13.3, Mastercard 4853)](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html).** Pièce 1 : la fiche produit au moment de l'achat et des photos avant expédition. Répondez à chaque argument. Attention : selon Visa, la politique de retour n'a pas d'incidence pour ce motif.
+**Non conforme ou défectueux (Visa 13.3, Mastercard 4853).** Pièce 1 : la fiche produit au moment de l'achat et des photos avant expédition. Répondez à chaque argument. Attention : selon Visa, la politique de retour n'a pas d'incidence pour ce motif.
 
-**[Abonnement annulé (Visa 13.2, Mastercard 4841)](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html).** Pièce 1 : les conditions d'abonnement acceptées et l'absence de demande d'annulation à la date du prélèvement. Visa mentionne aussi la preuve que le client a utilisé le service après la date de retrait de son autorisation.
+**Abonnement annulé (Visa 13.2, Mastercard 4841).** Pièce 1 : les conditions d'abonnement acceptées et l'absence de demande d'annulation à la date du prélèvement. Visa mentionne aussi la preuve que le client a utilisé le service après la date de retrait de son autorisation.
 
-**[Crédit non traité (Visa 13.6, Mastercard 4860)](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html).** Pièce 1 : le justificatif du remboursement (montant, date) ou la preuve qu'aucun crédit n'était dû.
+**Crédit non traité (Visa 13.6, Mastercard 4860).** Pièce 1 : le justificatif du remboursement (montant, date) ou la preuve qu'aucun crédit n'était dû.
 
-**[Commande annulée ou retournée (Visa 13.7)](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html).** Pièce 1 : la politique de retour ou d'annulation communiquée et acceptée lors de l'achat, et le fait que le client ne l'a pas suivie. En France, cette politique ne peut pas réduire le droit légal de rétractation du consommateur (voir notre [guide Visa 13.7](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html)).
+**Commande annulée ou retournée (Visa 13.7).** Pièce 1 : la politique de retour ou d'annulation communiquée et acceptée lors de l'achat, et le fait que le client ne l'a pas suivie. En France, cette politique ne peut pas réduire le droit légal de rétractation du consommateur (voir notre guide Visa 13.7).
 
-Les guides Mastercard : [4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html). Le guide marchand du 13 mai 2025 regroupe ces cas sous le 4853 ; Stripe affiche encore les anciens codes.
+Les intitulés Mastercard sont ceux de la documentation Stripe ; la documentation officielle Mastercard n'a pas été consultée.
 
 ## Ce qu'il ne faut pas écrire
 

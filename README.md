@@ -21,6 +21,7 @@ Puis ouvrir [http://127.0.0.1:8765/](http://127.0.0.1:8765/).
 - `mentions-legales.html` — éditeur et hébergeur
 - `confidentialite.html` — formulaire, compteur, droits
 - `merci.html` — accusé de la liste d'attente
+- `plan-du-site.html` — liste des pages
 - `guides/index.html` — liste des notes
 - `guides/*.html` — une page par article
 
@@ -52,7 +53,19 @@ Chaque page HTML porte dans le `<head>` la balise `google-site-verification` fou
 
 ## Liste d'attente
 
-Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne contiennent ni `fetch`, ni stockage local. Le compteur est une image vers hits.sh.
+Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne stockent rien dans le navigateur.
+
+## Compteurs
+
+hits.sh ne répondait plus le 10 octobre 2026 (aucun octet après plus de 10 secondes). Derniers totaux connus le 9 octobre 2026 vers 16:05, heure de Paris : présentation 10, outil 7, lettres générées 2.
+
+Les compteurs sont maintenant ceux d'Abacus, sans compte. L'incrément est une requête GET vers `/hit`, avec un délai court. La lecture publique n'incrémente pas :
+
+- présentation : https://abacus.jasoncameron.dev/get/plaidoo-cdfttchccy/index
+- outil : https://abacus.jasoncameron.dev/get/plaidoo-cdfttchccy/outil
+- lettres générées : https://abacus.jasoncameron.dev/get/plaidoo-cdfttchccy/lettre-generee
+
+Les nouveaux compteurs partent de 0. Abacus a été retenu parce qu'il ne demande pas de compte, ne dépose pas de cookie, autorise la lecture depuis le navigateur, et sépare la lecture de l'incrément. counterapi.dev exige un compte depuis la version 2, et sa version 1 est fermée.
 
 ## Contrôle
 

@@ -327,8 +327,9 @@
   }
 
   function countGeneratedLetter() {
-    var beacon = new Image();
-    beacon.src = "https://hits.sh/cdfttchccy-ai.github.io/plaidoo/lettre-generee.svg";
+    try {
+      if (window.PlaidooCount) window.PlaidooCount.hit("lettre-generee");
+    } catch (error) {}
   }
 
   function copyLetter(letter, status) {

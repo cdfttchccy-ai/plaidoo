@@ -94,6 +94,8 @@ Service-Public indique que le simple renvoi du bien sans déclaration ne suffit 
 **Quelle différence avec 13.6 ?**
 Le [Visa 13.6](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html) vise un crédit promis mais non traité ; le 13.7, une annulation ou un retour dont le crédit n'apparaît pas. Les preuves se recoupent (justificatif de remboursement, politique, suivi du retour). Le prélèvement récurrent est le [Visa 13.2](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html). Une trame à trous est dans le [modèle de réponse](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
 
+Guides liés : [Visa 13.6](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html), [taille, retour ou article non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-vetement-taille-retour.html).
+
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

@@ -124,7 +124,7 @@ Celui-ci : Mastercard range ces cas sous 4853.
 
 ## Guides liés
 
-[Visa 13.2, abonnement annulé](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html).
+[Visa 13.2, abonnement annulé](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-2-abonnement-annule.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [abonnements Shopify](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-abonnement-shopify-subscriptions.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

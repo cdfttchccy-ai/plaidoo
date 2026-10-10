@@ -110,6 +110,8 @@ Service-Public décrit une résiliation en ligne en 3 étapes pour les contrats 
 **Quelle différence avec Visa 13.7 ?**
 Le 13.2 vise un prélèvement récurrent après retrait de l'autorisation. Le 13.7 vise un achat annulé ou un article retourné dont le crédit n'apparaît pas. Voir notre [guide Visa 13.7](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html). Une trame à trous est dans le [modèle de réponse](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
 
+Guides liés : [Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [abonnements Shopify](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-abonnement-shopify-subscriptions.html).
+
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

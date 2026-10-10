@@ -259,8 +259,12 @@ const sourceSlugs = fs.readdirSync(path.join(root, "guides", "src"))
   });
 const expectedGuides = ["index.html", ...sourceSlugs].sort();
 const requiredGuides = [
+  "colis-point-relais-non-retire-litige.html",
+  "droit-retractation-litige-bancaire.html",
   "frais-litige-shopify-payments.html",
+  "litige-abonnement-shopify-subscriptions.html",
   "litige-colis-non-recu-shopify.html",
+  "litige-vetement-taille-retour.html",
   "litige-mastercard-4841-abonnement.html",
   "litige-mastercard-4853.html",
   "litige-mastercard-4855.html",

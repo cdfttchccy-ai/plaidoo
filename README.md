@@ -35,7 +35,7 @@ Les sources sont des fichiers Markdown dans `guides/src/`. Chaque fichier commen
 node scripts/build-guides.mjs
 ```
 
-Le script écrit `guides/index.html`, `guides/<slug>.html`, et réécrit `sitemap.xml` (lastmod du frontmatter pour chaque guide). Chaque page affiche la mention « Information générale, pas un conseil juridique » et la date « Mis à jour le », prise du frontmatter (sinon le 9 octobre 2026). Quatorze notes sont publiées, dont quatre sur les codes Mastercard 4855, 4853, 4841 et 4860 (10 octobre 2026).
+Le script écrit `guides/index.html`, `guides/<slug>.html`, et réécrit `sitemap.xml` (lastmod du frontmatter pour chaque guide). Chaque page affiche la mention « Information générale, pas un conseil juridique » et la date « Mis à jour le », prise du frontmatter (sinon le 9 octobre 2026). Dix-huit notes sont publiées, dont les codes Mastercard et quatre notes du 10 octobre 2026 sur la taille et le retour, le point relais, la rétractation et les abonnements Shopify.
 
 Pour ajouter un guide :
 

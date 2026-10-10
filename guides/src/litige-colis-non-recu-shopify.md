@@ -104,6 +104,8 @@ Non. Selon Shopify, il n'y a pas de processus d'appel et Shopify ne peut pas ann
 **Combien coûte un litige ?**
 En France, Shopify Payments facture 15 EUR de frais de rétrofacturation, remboursés si vous gagnez. Détails dans notre article sur les frais de litige.
 
+Guides liés : [Visa 13.1](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html), [colis en point relais non retiré](https://cdfttchccy-ai.github.io/plaidoo/guides/colis-point-relais-non-retire-litige.html).
+
 ## Préparer votre dossier en quelques minutes
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Vous choisissez le motif (par ex. Visa 13.1 ou Mastercard 4855), votre transporteur (Colissimo, Mondial Relay, Chronopost ou autre) et obtenez :

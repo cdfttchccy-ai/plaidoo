@@ -108,6 +108,8 @@ Avec Shopify Payments, la page d'aide en anglais indique qu'un paiement ne peut 
 **Combien coûte un litige ?**
 En France : 15 EUR avec Shopify Payments, remboursés si vous gagnez. Avec Stripe : 20 € par litige reçu, plus 20 € si vous y répondez manuellement (ce second montant est remboursé si vous gagnez). Voir nos articles dédiés.
 
+Guides liés : [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [colis en point relais non retiré](https://cdfttchccy-ai.github.io/plaidoo/guides/colis-point-relais-non-retire-litige.html).
+
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

@@ -123,7 +123,7 @@ Suivez notre [guide 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-
 
 ## Guides liés
 
-[Visa 13.3, produit non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html), [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [Mastercard 4841, abonnement](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [Mastercard 4860, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html).
+[Visa 13.3, produit non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/produit-non-conforme-chargeback.html), [Mastercard 4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [Mastercard 4841, abonnement](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [Mastercard 4860, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [taille, retour ou article non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-vetement-taille-retour.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

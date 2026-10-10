@@ -107,6 +107,8 @@ Avec Shopify Payments, la page d'aide en anglais indique qu'on ne peut plus remb
 **Combien de temps le client a-t-il pour faire jouer la garantie ?**
 2 ans à partir de la délivrance du bien, selon Service-Public.
 
+Guides liés : [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [taille, retour ou article non conforme](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-vetement-taille-retour.html).
+
 ## Préparer votre dossier avec l'outil gratuit
 
 Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preuves pour ce motif ?](https://cdfttchccy-ai.github.io/plaidoo/outil.html). Il est pensé pour un e-commerçant en France qui répond à un litige Shopify Payments ou Stripe. Vous indiquez trois choses :

@@ -113,7 +113,7 @@ Le guide Mastercard exclut ce litige quand les biens sont retenus faute de paiem
 
 ## Guides liés
 
-[Visa 13.1, marchandise non reçue](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [preuve de livraison Colissimo](https://cdfttchccy-ai.github.io/plaidoo/guides/preuve-livraison-colissimo-litige.html).
+[Visa 13.1, marchandise non reçue](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-1.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [preuve de livraison Colissimo](https://cdfttchccy-ai.github.io/plaidoo/guides/preuve-livraison-colissimo-litige.html), [colis en point relais non retiré](https://cdfttchccy-ai.github.io/plaidoo/guides/colis-point-relais-non-retire-litige.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

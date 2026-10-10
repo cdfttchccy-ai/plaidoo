@@ -89,7 +89,7 @@ Pour une rétractation, Service-Public indique que le vendeur peut différer le 
 **Un remboursement partiel suffit-il ?**
 Visa demande le montant du crédit traité. Si le crédit ne couvre pas tout ce qui est réclamé, expliquez pourquoi, preuves à l'appui.
 
-Guides liés : [Visa 13.7, commande annulée ou retournée](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html), [Mastercard 4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [modèle de réponse à un litige](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
+Guides liés : [Visa 13.7, commande annulée ou retournée](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html), [Mastercard 4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html), [modèle de réponse à un litige](https://cdfttchccy-ai.github.io/plaidoo/guides/modele-reponse-litige-chargeback.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

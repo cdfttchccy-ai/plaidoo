@@ -246,13 +246,13 @@ const latestGuideDate = guides.reduce((max, guide) => (guide.date > max ? guide.
 
 const indexHtml = chrome(
   "Guides — Plaidoo",
-  "Notes sur les litiges Shopify Payments et Stripe : frais, colis non reçu, Visa 13.1 à 13.7, Mastercard 4855, 4853, 4841 et 4860, Colissimo, produit non conforme, modèle de réponse. Information générale.",
+  "Notes sur les litiges Shopify Payments et Stripe : frais, colis, point relais, Visa, Mastercard, rétractation, abonnements, taille et retour, Colissimo, modèle de réponse. Information générale.",
   "/guides/index.html",
   `    <p class="eyebrow">Guides</p>
     <h1>Comprendre un litige, sans promesse de gain.</h1>
     <p class="disclaimer disclaimer-banner" role="note"><strong>Information générale, pas un conseil juridique.</strong> Ceci n'est pas un conseil juridique. Les règles citées peuvent changer.</p>
     <p class="fine-print">Mis à jour le ${frenchDate(latestGuideDate)}.</p>
-    <p class="lead">Quatorze notes rédigées à partir de pages officielles consultées les 9 et 10 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
+    <p class="lead">Dix-huit notes rédigées à partir de pages officielles consultées les 9 et 10 octobre 2026. Elles ne remplacent pas votre contrat ni une relecture juridique.</p>
     <div class="guide-list">
 ${cards}
     </div>

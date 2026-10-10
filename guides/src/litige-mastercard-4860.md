@@ -110,7 +110,7 @@ Le guide Mastercard exclut de ce litige les frais de livraison non remboursés p
 
 ## Guides liés
 
-[Visa 13.6, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html).
+[Visa 13.6, crédit non traité](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-6-credit-non-traite.html), [Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [droit de rétractation](https://cdfttchccy-ai.github.io/plaidoo/guides/droit-retractation-litige-bancaire.html).
 
 ## Préparer votre dossier avec l'outil gratuit
 

@@ -35,7 +35,7 @@
 
     var hint = document.createElement("p");
     hint.className = "fine-print";
-    hint.textContent = "Le dossier se met à jour dans la page. Le texte n'est pas envoyé.";
+    hint.textContent = "Le dossier se met à jour dans la page. Le texte saisi n'est pas transmis. Un compteur anonyme de visites part séparément.";
     form.appendChild(hint);
     return form;
   }

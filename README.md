@@ -45,7 +45,7 @@ Pour ajouter un guide :
 
 ## Search Console
 
-Chaque page a une canonical absolue vers `https://cdfttchccy-ai.github.io/plaidoo/…`. Le fichier `sitemap.xml` est à la racine du site de projet et ne contient que des URL absolues. `robots.txt` y pointe.
+Chaque page a une canonical absolue vers `https://cdfttchccy-ai.github.io/plaidoo/…`. Le fichier `sitemap.xml` est à la racine du site de projet et ne contient que des URL absolues, chacune avec un `lastmod`. Pour un guide, cette date est celle du frontmatter. Pour les autres pages, c'est le 10 octobre 2026, date de cette mise à jour. `robots.txt` y pointe. Le pied de page de chaque page lie ce fichier sous le libellé « Plan du site ».
 
 Google ne lit un robots.txt qu'à la racine de l'hôte, `https://cdfttchccy-ai.github.io/robots.txt`. Ce dépôt ne publie pas cette adresse. Le sitemap se déclare donc dans la Search Console, sur une propriété de type préfixe d'URL `https://cdfttchccy-ai.github.io/plaidoo/`.
 

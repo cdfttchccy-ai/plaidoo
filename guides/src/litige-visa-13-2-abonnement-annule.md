@@ -22,7 +22,7 @@ Le guide Visa pour les marchands (juin 2024) intitule la condition 13.2 « Cance
 
 Causes citées par Visa : retrait de l'autorisation par le client, carte annulée par le client ou par sa banque, prélèvement effectué après avoir été informé de la fermeture du compte.
 
-Chez Mastercard, le code voisin est **4841** (« Canceled Recurring or Digital Goods Transactions »), d'après la documentation Stripe. La documentation officielle de Mastercard n'a pas été consultée.
+Chez Mastercard, le code voisin est **4841** (« Canceled Recurring or Digital Goods Transactions »), d'après la documentation Stripe. Le guide marchand Mastercard du 13 mai 2025 range ce cas sous le 4853 : voir le [guide Mastercard 4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html).
 
 ## Que répondre selon Visa
 

@@ -400,7 +400,7 @@
     },
     "code-large-4853": {
       title: "Le code 4853 est plus large que « non conforme »",
-      text: "Stripe, sur sa page des preuves par motif, présente 4853 comme « Defective or Not As Described ». Le guide Mastercard et la page Stripe des catégories décrivent aussi 4853 comme le motif parapluie « Cardholder Dispute », qui peut couvrir un bien non fourni, un avoir, ou un abonnement, lorsque l'acquéreur n'utilise pas 4855, 4860 ou 4841. Lisez le récit du litige. S'il dit que le colis n'est pas arrivé, reprenez la checklist « non reçu »."
+      text: "Stripe, sur sa page des preuves par motif, présente 4853 comme « Defective or Not As Described ». Le guide marchand Mastercard du 13 mai 2025 et la page Stripe des catégories décrivent aussi 4853 comme le motif parapluie « Cardholder Dispute », qui peut couvrir un bien non fourni, un avoir, ou un abonnement, lorsque l'acquéreur n'utilise pas 4855, 4860 ou 4841. Lisez le récit du litige. S'il dit que le colis n'est pas arrivé, reprenez la checklist « non reçu »."
     },
     "conformite-dabord": {
       title: "Proposer d'abord réparation ou remplacement",
@@ -444,6 +444,18 @@
     articles: ["L215-1-1", "D215-1"],
     letter: "Cette commande est rattachée à un abonnement. Pièces jointes sur la résiliation : [CAPTURE DU PARCOURS], demande du [DATE], fin d'accès ou dernière box le [DATE]."
   };
+
+  var mcGuideSentence = "Dans le guide marchand Mastercard (Chargeback Guide Merchant Edition) du 13 mai 2025, les cas « non reçu », « non conforme » et « abonnement » sont regroupés sous le code 4853, mais certains prestataires (dont Stripe) affichent encore les anciens codes : fiez-vous au récit du litige.";
+  var mcGuideCites = [
+    {
+      label: "Chargeback Guide Merchant Edition, 13 mai 2025",
+      url: "https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/chargeback-guide.pdf"
+    },
+    {
+      label: "Stripe, catégories de motifs",
+      url: "https://docs.stripe.com/disputes/categories"
+    }
+  ];
 
   var reasons = [
     {
@@ -498,7 +510,8 @@
       official: "Goods or Services Not Provided",
       plain: "Le client dit qu'il n'a pas reçu le bien ou la prestation",
       family: "not_received",
-      stripe: "Stripe, page des preuves par motif, décrit le 4855 comme un bien ou un service payé et non fourni. Des guides d'acquéreur indiquent que Mastercard prévoit de retirer à terme les codes 4841, 4855 et 4860 au profit du 4853. Le code peut donc encore apparaître tel quel sur Shopify ou Stripe."
+      stripe: "Stripe, page des preuves par motif, décrit le 4855 comme un bien ou un service payé et non fourni. " + mcGuideSentence,
+      cites: mcGuideCites
     },
     {
       id: "mc-4853",
@@ -507,7 +520,8 @@
       official: "Cardholder Dispute — souvent « non conforme »",
       plain: "Le client conteste le bien reçu : défaut, ou différence avec la description",
       family: "not_as_described",
-      stripe: "Sur la page Stripe des preuves, 4853 est présenté comme « Defective or Not As Described ». Le guide Mastercard des marchands titre pourtant un motif « Cardholder Dispute » sous le code 4853. Lire l'avertissement affiché avec la checklist."
+      stripe: "Sur la page Stripe des preuves, 4853 est présenté comme « Defective or Not As Described ». Le guide Mastercard des marchands titre pourtant un motif « Cardholder Dispute » sous le code 4853. " + mcGuideSentence,
+      cites: mcGuideCites
     },
     {
       id: "mc-4841",
@@ -516,7 +530,8 @@
       official: "Canceled Recurring or Digital Goods Transactions",
       plain: "Le client dit avoir résilié un abonnement, ou conteste un bien numérique récurrent",
       family: "recurring",
-      stripe: "Stripe décrit le 4841 comme un abonnement ou un bien numérique facturé après annulation, ou comme un débit récurrent non accepté. Le code est susceptible d'être basculé vers 4853 par Mastercard ; il apparaît encore chez les acquéreurs."
+      stripe: "Stripe décrit le 4841 comme un abonnement ou un bien numérique facturé après annulation, ou comme un débit récurrent non accepté. " + mcGuideSentence,
+      cites: mcGuideCites
     },
     {
       id: "mc-4860",
@@ -548,12 +563,12 @@
     {
       title: "Stripe — catégories et codes Mastercard",
       url: "https://docs.stripe.com/disputes/categories",
-      note: "Consultée le 9 octobre 2026. Elle range 4860 en « credit not processed », 4841 en « subscription canceled », 4855 en « product not received », et place sous 4853 plusieurs sous-motifs, dont le défaut, le bien non fourni, l'avoir et l'abonnement."
+      note: "Consultée le 9 octobre 2026, revérifiée le 10 octobre 2026. Elle affiche encore 4860 en « credit not processed », 4841 en « subscription canceled » et 4855 en « product not received », et place aussi sous 4853 les sous-motifs défaut, bien non fourni, avoir et abonnement."
     },
     {
       title: "Mastercard — Chargeback Guide, Merchant Edition",
       url: "https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/chargeback-guide.pdf",
-      note: "Sommaire consulté le 9 octobre 2026 : section « Cardholder Dispute Chargeback (Message Reason Code 4853/53/4850/4854) ». Le détail des anciens codes intra-européens 4855 et 4860 figure dans des éditions plus anciennes du guide, pas comme titre principal de cette édition."
+      note: "Édition « Chargeback Guide Merchant Edition » du 13 mai 2025, texte consulté les 9 et 10 octobre 2026. Les cas « non reçu », « non conforme » et « abonnement » y sont regroupés sous le code 4853 (section Cardholder Dispute Chargeback, Message Reason Code 4853/53/4850/4854), dans les sous-sections « Goods or Services Not Provided », « Goods or Services Were Either Not as Described or Defective » et « Cardholder Dispute of a Recurring Transaction ». Cette édition ne contient pas les codes 4855, 4841 ni 4860. Certains prestataires, dont Stripe, affichent encore ces anciens codes : fiez-vous au récit du litige."
     },
     {
       title: "Service-Public — livraison à distance (F10037)",

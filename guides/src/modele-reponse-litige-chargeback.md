@@ -69,7 +69,7 @@ Copiez la trame, remplacez chaque [crochet] et supprimez les blocs qui ne s'appl
 
 **[Commande annulée ou retournée (Visa 13.7)](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html).** Pièce 1 : la politique de retour ou d'annulation communiquée et acceptée lors de l'achat, et le fait que le client ne l'a pas suivie. En France, cette politique ne peut pas réduire le droit légal de rétractation du consommateur (voir notre [guide Visa 13.7](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-visa-13-7-commande-annulee.html)).
 
-Les intitulés Mastercard sont ceux de la documentation Stripe ; la documentation officielle Mastercard n'a pas été consultée.
+Les guides Mastercard : [4855](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4855.html), [4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html), [4841](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4841-abonnement.html), [4860](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4860.html). Le guide marchand du 13 mai 2025 regroupe ces cas sous le 4853 ; Stripe affiche encore les anciens codes.
 
 ## Ce qu'il ne faut pas écrire
 

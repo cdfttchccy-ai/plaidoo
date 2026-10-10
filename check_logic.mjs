@@ -104,6 +104,17 @@ assert(described.warnings.some((warning) => /réparation ou le remplacement/.tes
 
 const umbrella = buildPack(catalog, "mc-4853", "colissimo", false);
 assert(umbrella.warnings.some((warning) => /4853/.test(warning.text) && /parapluie|large/i.test(warning.title + warning.text)), "4853 signalé comme large");
+const mcSentence = "Dans le guide marchand Mastercard (Chargeback Guide Merchant Edition) du 13 mai 2025, les cas « non reçu », « non conforme » et « abonnement » sont regroupés sous le code 4853, mais certains prestataires (dont Stripe) affichent encore les anciens codes : fiez-vous au récit du litige.";
+for (const id of ["mc-4855", "mc-4853", "mc-4841"]) {
+  const reason = catalog.reasons.find((item) => item.id === id);
+  assert(reason.stripe.includes(mcSentence), id + " phrase Mastercard 13 mai 2025");
+  assert(reason.cites.some((cite) => cite.url === "https://www.mastercard.us/content/dam/public/mastercardcom/na/global-site/documents/chargeback-guide.pdf"), id + " lien guide Mastercard");
+  assert(reason.cites.some((cite) => cite.url === "https://docs.stripe.com/disputes/categories"), id + " lien categories Stripe");
+}
+assert(!/prévoit de retirer|retirer à terme|susceptible d'être basculé|basculé vers/.test(JSON.stringify(catalog)), "plus de retrait annoncé des codes");
+const mcSource = catalog.sources.find((source) => /Chargeback Guide/.test(source.title));
+assert(mcSource && mcSource.note.includes("13 mai 2025") && mcSource.note.includes("4853"), "note source Mastercard");
+assert(fs.readFileSync(path.join(root, "js", "outil.js"), "utf8").includes("pack.reason.cites"), "outil affiche les liens sources");
 
 const recurring = buildPack(catalog, "visa-13-2", "autre", false);
 assert(recurring.warnings.some((warning) => /pas un abonnement/.test(warning.title)), "13.2 sans abonnement prévient");
@@ -250,6 +261,10 @@ const expectedGuides = ["index.html", ...sourceSlugs].sort();
 const requiredGuides = [
   "frais-litige-shopify-payments.html",
   "litige-colis-non-recu-shopify.html",
+  "litige-mastercard-4841-abonnement.html",
+  "litige-mastercard-4853.html",
+  "litige-mastercard-4855.html",
+  "litige-mastercard-4860.html",
   "litige-visa-13-1.html",
   "litige-visa-13-2-abonnement-annule.html",
   "litige-visa-13-6-credit-non-traite.html",

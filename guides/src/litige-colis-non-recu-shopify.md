@@ -114,7 +114,7 @@ Nous avons fait un **petit outil gratuit**, sans compte : [Plaidoo, quelles preu
 - les références du Code de la consommation, avec leur niveau de vérification ;
 - un modèle de réponse à trous, à copier ou imprimer.
 
-Rien n'est envoyé : l'outil tourne dans votre navigateur et ne soumet rien à votre place. Il ne couvre pas encore les litiges pour fraude, American Express ni PayPal, et ne garantit aucun résultat.
+Le dossier est assemblé dans votre navigateur : son contenu n'est envoyé nulle part. Le site signale un compteur anonyme de visites et de lettres générées (service Abacus), décrit sur sa page Sources. L'outil ne soumet rien à votre place. Il ne couvre pas encore les litiges pour fraude, American Express ni PayPal, et ne garantit aucun résultat.
 
 ## Sources (consultées le 9 octobre 2026)
 

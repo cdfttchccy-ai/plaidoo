@@ -105,7 +105,7 @@ L'outil vous donne alors :
 - des références du Code de la consommation, avec leur niveau de vérification ;
 - un modèle de réponse à trous, à relire, puis à copier ou imprimer.
 
-Le script tourne dans votre navigateur et ne contacte aucun serveur. L'outil ne soumet rien à votre place et ne couvre pas les litiges pour fraude, American Express ni PayPal. Il ne garantit aucun résultat : c'est la banque du client qui décide.
+Le dossier est assemblé dans votre navigateur : son contenu n'est envoyé nulle part. Le site signale un compteur anonyme de visites et de lettres générées (service Abacus), décrit sur sa page Sources. L'outil ne soumet rien à votre place et ne couvre pas les litiges pour fraude, American Express ni PayPal. Il ne garantit aucun résultat : c'est la banque du client qui décide.
 
 ## Sources (consultées le 9 octobre 2026)
 

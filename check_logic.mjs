@@ -229,6 +229,28 @@ assert(privacy.includes("Abacus") && privacy.includes("abacus.jasoncameron.dev")
 assert(privacy.includes("CNIL"), "réclamation CNIL");
 assert(privacy.includes("suppression"), "suppression par le formulaire");
 assert(/ne dépose pas de cookie|aucun cookie|sans cookie/i.test(privacy), "absence de cookie");
+assert(privacy.includes("Fly.io") && privacy.includes("iad"), "région Fly observée pour Abacus");
+assert(privacy.includes("États-Unis"), "Abacus ou GitHub hors UE");
+assert(privacy.includes("GitHub Pages") && privacy.includes("GitHub, Inc."), "hébergement GitHub Pages");
+assert(privacy.includes("Data Privacy Framework"), "garantie GitHub citée");
+assert(privacy.includes("ne publie pas de pays"), "pays FormSubmit non publié");
+assert(privacy.includes("journaux de serveur"), "journaux GitHub");
+
+const falsePrivacy = /ne contacte aucun serveur|n'envoie aucune donnée|rien n'est envoyé|aucune donnée ne quitte|n'envoie rien/i;
+function walkTexts(dir, acc) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name === "node_modules" || entry.name === ".git") continue;
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walkTexts(full, acc);
+    else if (/\.(html|js|md)$/.test(entry.name) && entry.name !== "check_logic.mjs") acc.push(full);
+  }
+  return acc;
+}
+for (const full of walkTexts(root, [])) {
+  const rel = path.relative(root, full);
+  const source = fs.readFileSync(full, "utf8");
+  assert(!falsePrivacy.test(source), rel + " sans affirmation fausse sur l'absence d'envoi");
+}
 
 for (const file of pages) {
   const html = fs.readFileSync(path.join(root, file), "utf8");

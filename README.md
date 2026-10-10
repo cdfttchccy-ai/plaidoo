@@ -53,7 +53,7 @@ Chaque page HTML porte dans le `<head>` la balise `google-site-verification` fou
 
 ## Liste d'attente
 
-Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne stockent rien dans le navigateur.
+Le formulaire poste vers l'alias FormSubmit, avec un pot de miel, le captcha laissé actif, et une redirection vers `merci.html`. Aucune adresse n'est écrite dans le dépôt. Les scripts ne stockent rien dans le navigateur. La politique de FormSubmit (formsubmit.co/privacy.pdf, en vigueur le 17 janvier 2019) ne publie pas de pays d'hébergement. Le PDF est servi derrière Cloudflare : un en-tête `cf-ray` se terminant par IAD désigne le point de présence vu depuis cette machine, pas l'origine.
 
 ## Compteurs
 
@@ -66,6 +66,10 @@ Les compteurs sont maintenant ceux d'Abacus, sans compte. L'incrément est une r
 - lettres générées : https://abacus.jasoncameron.dev/get/plaidoo-cdfttchccy/lettre-generee
 
 Les nouveaux compteurs partent de 0. Abacus a été retenu parce qu'il ne demande pas de compte, ne dépose pas de cookie, autorise la lecture depuis le navigateur, et sépare la lecture de l'incrément. counterapi.dev exige un compte depuis la version 2, et sa version 1 est fermée.
+
+Le 10 octobre 2026, une requête vers `abacus.jasoncameron.dev` a répondu avec `server: Fly/…` et un `fly-request-id` se terminant par `iad` (région Fly de Dulles, États-Unis). Le README du dépôt JasonLovesDoggo/abacus coche « fly.io + Redis on OCI ». L'emplacement de ce Redis n'a pas été confirmé à part, et il n'est pas affirmé que chaque visite reste dans la région iad. La requête de compteur ne contient pas le texte du dossier. Aucune participation d'Abacus au Data Privacy Framework n'a été vérifiée.
+
+GitHub, dans sa déclaration de confidentialité en vigueur le 27 avril 2026, indique une certification au EU-U.S. Data Privacy Framework. Cette phrase reprend la déclaration de GitHub. Le registre public du Département du commerce n'a pas été relu comme texte.
 
 ## Contrôle
 

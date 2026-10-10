@@ -16,7 +16,7 @@ Le client a bien reçu sa commande, mais il conteste le paiement auprès de sa b
 ## Quels codes pour ce motif ?
 
 - **Visa 13.3** « Not as Described or Defective Merchandise/Services », selon le guide de Visa destiné aux marchands (juin 2024).
-- **Mastercard 4853** « Defective or Not As Described », d'après la documentation Stripe sur les codes de motif. La documentation officielle de Mastercard n'a pas été consultée.
+- **Mastercard 4853** « Defective or Not As Described », d'après la documentation Stripe sur les codes de motif. Le guide marchand Mastercard du 13 mai 2025 titre ce motif « Cardholder Dispute » sous le code 4853. Voir le [guide Mastercard 4853](https://cdfttchccy-ai.github.io/plaidoo/guides/litige-mastercard-4853.html).
 
 Selon Visa, le titulaire de la carte affirme que :
 

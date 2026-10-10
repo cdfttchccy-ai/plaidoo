@@ -198,6 +198,20 @@
     official.className = "fine-print";
     official.textContent = "Intitulé réseau : " + pack.reason.official + ". " + pack.reason.stripe;
     root.appendChild(official);
+    if (pack.reason.cites && pack.reason.cites.length) {
+      var cites = document.createElement("p");
+      cites.className = "fine-print";
+      cites.appendChild(document.createTextNode("Sources de cette phrase : "));
+      pack.reason.cites.forEach(function (item, index) {
+        if (index) cites.appendChild(document.createTextNode(" · "));
+        var link = document.createElement("a");
+        link.href = item.url;
+        link.rel = "noopener";
+        link.textContent = item.label;
+        cites.appendChild(link);
+      });
+      root.appendChild(cites);
+    }
 
     pack.warnings.forEach(function (warning) {
       root.appendChild(callout(warning.title, warning.text));

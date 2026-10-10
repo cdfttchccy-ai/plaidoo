@@ -119,11 +119,11 @@ assert(cancelled.articles.some((article) => article.id === "L221-28"), "13.7 cit
 assert(buildPack(catalog, "inconnu", "colissimo", false).ok === false, "motif inconnu rejeté");
 assert(buildPack(catalog, "visa-13-1", "dhl-invente", false).ok === false, "transporteur inconnu rejeté");
 
-const hitIndex = "https://hits.sh/cdfttchccy-ai.github.io/plaidoo/index.svg";
-const hitOutil = "https://hits.sh/cdfttchccy-ai.github.io/plaidoo/outil.svg";
-const hitLetter = "https://hits.sh/cdfttchccy-ai.github.io/plaidoo/lettre-generee.svg";
+const countBase = "https://abacus.jasoncameron.dev";
+const countNamespace = "plaidoo-cdfttchccy";
+const countKeys = ["index", "outil", "lettre-generee"];
 const formAction = "https://formsubmit.co/c0b7e8091d90e4e34fab6ebe7dbb1ce9";
-const banned = [/fetch\s*\(/, /XMLHttpRequest/, /sendBeacon/, /localStorage/, /sessionStorage/, /gtag\s*\(/, /google-analytics/, /googletagmanager/, /doubleclick/, /facebook\.net/, /hotjar/, /segment\.com/, /mixpanel/];
+const banned = [/XMLHttpRequest/, /localStorage/, /sessionStorage/, /gtag\s*\(/, /google-analytics/, /googletagmanager/, /doubleclick/, /facebook\.net/, /hotjar/, /segment\.com/, /mixpanel/, /hits\.sh/];
 const emailLike = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
 
 for (const file of fs.readdirSync(path.join(root, "js"))) {
@@ -132,24 +132,35 @@ for (const file of fs.readdirSync(path.join(root, "js"))) {
     assert(!pattern.test(source), file + " sans " + pattern);
   });
   assert(!emailLike.test(source), file + " sans adresse e-mail");
-  if (file !== "outil.js") {
-    assert(!source.includes("hits.sh"), file + " sans compteur");
+  if (file !== "count.js") {
+    assert(!/fetch\s*\(/.test(source), file + " sans fetch");
+    assert(!/sendBeacon/.test(source), file + " sans sendBeacon");
+    assert(!source.includes("abacus.jasoncameron.dev"), file + " sans compteur");
   }
 }
+const countJs = fs.readFileSync(path.join(root, "js/count.js"), "utf8");
+assert(countJs.includes("keepalive"), "compteur keepalive");
+assert(countJs.includes("AbortController") && countJs.includes("4000"), "compteur avec delai court");
+assert(countJs.includes("sendBeacon"), "repli sendBeacon");
+countKeys.forEach((key) => {
+  assert(countJs.includes(countBase + "/hit/" + countNamespace + "/") || countJs.includes(countNamespace), "compteur " + key);
+});
+assert(countJs.includes(countBase + "/hit/") && countJs.includes('"' + countNamespace + '"'), "seul Abacus est autorise");
+assert(!/hits\.sh|counterapi\.dev|countapi\.xyz/.test(countJs), "pas d'autre compteur");
 
 function externalSrcs(html) {
   return [...html.matchAll(/\bsrc="(https?:\/\/[^"]+)"/g)].map((match) => match[1]);
 }
 
-const pages = ["index.html", "outil.html", "sources.html", "merci.html", "a-propos.html", "mentions-legales.html", "confidentialite.html"];
+const pages = ["index.html", "outil.html", "sources.html", "merci.html", "a-propos.html", "mentions-legales.html", "confidentialite.html", "plan-du-site.html"];
 for (const file of pages) {
   const html = fs.readFileSync(path.join(root, file), "utf8");
   assert(!/<script[^>]+src="https?:/i.test(html), file + " sans script externe");
   assert(html.includes("Ceci n'est pas un conseil juridique"), file + " disclaimer visible");
   assert(!emailLike.test(html), file + " sans adresse e-mail");
-  const srcs = externalSrcs(html);
-  const allowed = file === "index.html" ? [hitIndex] : file === "outil.html" ? [hitOutil] : [];
-  assert(srcs.length === allowed.length && srcs.every((src, i) => src === allowed[i]), file + " compteur exact");
+  assert(externalSrcs(html).length === 0, file + " sans image externe");
+  assert(html.includes(">Plan du site</a>"), file + " lien plan du site");
+  assert(html.includes('href="sitemap.xml"'), file + " lien sitemap");
   if (file !== "index.html") {
     assert(!/<form\b/i.test(html), file + " sans formulaire");
   }
@@ -172,16 +183,19 @@ assert(index.includes("formsubmit.co"), "mention FormSubmit");
 assert(!index.includes("ouvre bientôt"), "avis d'ouverture retire");
 assert(index.includes("outil.html"), "lien vers l'outil");
 assert(!/Installer gratuitement sur Shopify/.test(index), "pas de faux bouton d'installation");
-assert(index.includes(hitIndex), "compteur de la presentation");
+assert(index.includes('src="js/count.js"') && index.includes('data-counter="index"'), "compteur de la presentation");
 
 const css = fs.readFileSync(path.join(root, "css/site.css"), "utf8");
 assert(/\.honey\s*\{[^}]*display:\s*none/.test(css), "honeypot masque par CSS");
 
 const outilHtml = fs.readFileSync(path.join(root, "outil.html"), "utf8");
-assert(outilHtml.includes(hitOutil), "compteur de l'outil");
+assert(outilHtml.includes('src="js/count.js"') && outilHtml.includes('data-counter="outil"'), "compteur de l'outil");
 
 const sources = fs.readFileSync(path.join(root, "sources.html"), "utf8");
-assert(sources.includes("hits.sh"), "compteur cite dans les sources");
+assert(sources.includes("abacus.jasoncameron.dev"), "compteur cite dans les sources");
+countKeys.forEach((key) => {
+  assert(sources.includes(countBase + "/get/" + countNamespace + "/" + key), "lecture " + key);
+});
 assert(sources.includes("adresse IP"), "mention de l'adresse IP recue");
 
 const merci = fs.readFileSync(path.join(root, "merci.html"), "utf8");
@@ -200,7 +214,7 @@ assert(!mentions.includes("À COMPLÉTER") && !mentions.includes("[À COMPLÉTER
 
 const privacy = fs.readFileSync(path.join(root, "confidentialite.html"), "utf8");
 assert(privacy.includes("formsubmit.co"), "FormSubmit dans la confidentialité");
-assert(privacy.includes("hits.sh"), "compteur dans la confidentialité");
+assert(privacy.includes("Abacus") && privacy.includes("abacus.jasoncameron.dev"), "compteur dans la confidentialité");
 assert(privacy.includes("CNIL"), "réclamation CNIL");
 assert(privacy.includes("suppression"), "suppression par le formulaire");
 assert(/ne dépose pas de cookie|aucun cookie|sans cookie/i.test(privacy), "absence de cookie");
@@ -261,6 +275,7 @@ for (const file of guideFiles) {
   assert(html.includes('property="og:title"'), "guides/" + file + " og");
   assert(html.includes('name="description"'), "guides/" + file + " description");
   assert(html.includes('href="../outil.html"'), "guides/" + file + " lien outil");
+  assert(html.includes('href="../sitemap.xml"') && html.includes(">Plan du site</a>"), "guides/" + file + " plan du site");
   assert(!html.includes("À COMPLÉTER"), "guides/" + file + " sans placeholder");
   assert(!/Payer maintenant|Ajouter au panier|checkout/i.test(html), "guides/" + file + " sans paiement");
   assert(!/noindex/i.test(html), "guides/" + file + " sans noindex");
@@ -274,11 +289,27 @@ assert(!/checkout|Ajouter au panier|Payer maintenant/i.test(index), "pas de paie
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
-for (const page of ["outil.html", "a-propos.html", "sources.html", "mentions-legales.html", "confidentialite.html", "merci.html"]) {
+assert(sitemap.charCodeAt(0) !== 0xFEFF, "sitemap sans BOM");
+assert(sitemap.endsWith("</urlset>\n"), "sitemap termine par un saut de ligne");
+assert(!sitemap.endsWith("</urlset>\n\n"), "sitemap sans ligne vide finale");
+const sitemapUrls = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
+assert(sitemapUrls.length === 8 + expectedGuides.length, "sitemap compte les pages et le plan");
+sitemapUrls.forEach((block) => {
+  const loc = block.match(/<loc>([^<]+)<\/loc>/);
+  const lastmod = block.match(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/);
+  assert(loc && loc[1].startsWith("https://cdfttchccy-ai.github.io/plaidoo/"), "sitemap url absolue");
+  assert(lastmod, "sitemap lastmod " + (loc ? loc[1] : ""));
+});
+for (const page of ["outil.html", "a-propos.html", "sources.html", "mentions-legales.html", "confidentialite.html", "merci.html", "plan-du-site.html"]) {
   assert(sitemap.includes(page), "sitemap " + page);
 }
 for (const file of expectedGuides) {
   assert(sitemap.includes("https://cdfttchccy-ai.github.io/plaidoo/guides/" + file), "sitemap guides/" + file);
+  if (file !== "index.html") {
+    const raw = fs.readFileSync(path.join(root, "guides", "src", file.replace(/\.html$/, ".md")), "utf8");
+    const date = raw.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
+    assert(date && sitemap.includes(`<loc>https://cdfttchccy-ai.github.io/plaidoo/guides/${file}</loc>\n    <lastmod>${date[1]}</lastmod>`), "lastmod frontmatter " + file);
+  }
 }
 assert(robots.includes("Sitemap: https://cdfttchccy-ai.github.io/plaidoo/sitemap.xml"), "robots pointe le sitemap absolu");
 
@@ -330,7 +361,7 @@ assert(!/#1b4332/i.test(css), "ancienne couleur retiree");
 
 const outilJs = fs.readFileSync(path.join(root, "js/outil.js"), "utf8");
 assert(outilJs.includes("Ceci n'est pas un conseil juridique"), "disclaimer a cote du dossier");
-assert(outilJs.includes(hitLetter), "compteur lettre-generee");
+assert(outilJs.includes('PlaidooCount.hit("lettre-generee")'), "compteur lettre-generee");
 assert(outilJs.includes("countGeneratedLetter"), "evenement au clic");
 assert(!/localStorage|sessionStorage/.test(outilJs), "lettre sans identifiant stocke");
 

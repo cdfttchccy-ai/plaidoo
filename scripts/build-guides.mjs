@@ -223,7 +223,7 @@ ${main}
       <p class="footer-logo"><a href="../index.html"><img class="logo logo-footer" src="../logo.svg" alt="Plaidoo" width="132" height="45"></a></p>
       <p>Ceci n'est pas un conseil juridique. Plaidoo ne garantit aucun résultat.</p>
       <p><a href="../index.html">Présentation</a> · <a href="../outil.html">Outil</a> · <a href="index.html">Guides</a> · <a href="../sources.html">Sources</a></p>
-      <p><a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../index.html#liste">Contact</a></p>
+      <p><a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../index.html#liste">Contact</a> · <a href="../sitemap.xml">Plan du site</a></p>
     </div>
   </footer>
 </body>
@@ -276,12 +276,27 @@ ${guide.html}
   fs.writeFileSync(path.join(outDir, `${guide.slug}.html`), page);
 }
 
-const sitemapPath = path.join(root, "sitemap.xml");
-let sitemap = fs.readFileSync(sitemapPath, "utf8");
-sitemap = sitemap.replace(/\s*<url><loc>https:\/\/cdfttchccy-ai\.github\.io\/plaidoo\/guides\/[^<]*<\/loc><\/url>/g, "");
-const locs = ["guides/index.html", ...guides.map((guide) => `guides/${guide.slug}.html`)]
-  .map((page) => `  <url><loc>${site}/${page}</loc></url>`)
-  .join("\n");
-sitemap = sitemap.replace("</urlset>", `${locs}\n</urlset>\n`);
-fs.writeFileSync(sitemapPath, sitemap);
+const staticLastmod = [
+  ["", "2026-10-10"],
+  ["outil.html", "2026-10-10"],
+  ["a-propos.html", "2026-10-10"],
+  ["sources.html", "2026-10-10"],
+  ["mentions-legales.html", "2026-10-10"],
+  ["confidentialite.html", "2026-10-10"],
+  ["merci.html", "2026-10-10"],
+  ["plan-du-site.html", "2026-10-10"],
+  ["guides/index.html", "2026-10-10"],
+];
+
+function urlEntry(locPath, lastmod) {
+  const loc = locPath ? `${site}/${locPath}` : `${site}/`;
+  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
+}
+
+const entries = [
+  ...staticLastmod.map(([locPath, lastmod]) => urlEntry(locPath, lastmod)),
+  ...guides.map((guide) => urlEntry(`guides/${guide.slug}.html`, guide.date)),
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
+fs.writeFileSync(path.join(root, "sitemap.xml"), sitemap);
 console.log(guides.length + " guides écrits.");

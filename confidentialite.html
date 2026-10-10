@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Confidentialité — Plaidoo</title>
-  <meta name="description" content="Liste d'attente via FormSubmit, compteur anonyme hits.sh, aucun cookie, et droits d'accès ou de suppression par le formulaire.">
+  <meta name="description" content="Liste d'attente via FormSubmit, compteur anonyme Abacus, aucun cookie, et droits d'accès ou de suppression par le formulaire.">
   <link rel="canonical" href="https://cdfttchccy-ai.github.io/plaidoo/confidentialite.html">
   <meta property="og:title" content="Confidentialité — Plaidoo">
   <meta property="og:description" content="Formulaire FormSubmit, compteur sans cookie, conservation et droits.">
@@ -59,7 +59,7 @@
     <p>Le formulaire demande une adresse e-mail, et un message si vous en écrivez un. La finalité est uniquement de vous prévenir de l'ouverture de Plaidoo, ou de traiter une demande que vous envoyez, par exemple une suppression.</p>
     <p>L'envoi est traité par FormSubmit (formsubmit.co), puis le message arrive dans une boîte. Les données sont conservées jusqu'au lancement, ou jusqu'à votre demande. Pour une suppression, renvoyez le même formulaire en écrivant «&nbsp;suppression&nbsp;» dans le message. Elles ne sont ni vendues ni partagées au-delà de cet envoi.</p>
     <h2>Compteur anonyme</h2>
-    <p>Trois compteurs publics, sans cookie et sans identifiant stocké dans le navigateur, sont fournis par hits.sh&nbsp;: les vues de la présentation, les vues de l'outil, et un événement quand vous copiez ou imprimez la lettre. Chaque compteur est une requête d'image. hits.sh reçoit cette requête, donc l'adresse IP. Le service annonce ne pas déposer de cookie et ne pas conserver cette adresse. Les totaux sont lisibles publiquement. Le détail est aussi sur la page <a href="sources.html">Sources</a>.</p>
+    <p>Trois compteurs publics, sans compte, sont fournis par Abacus (abacus.jasoncameron.dev)&nbsp;: les vues de la présentation, les vues de l'outil, et un événement quand vous copiez ou imprimez la lettre. Chacun est une requête GET vers /hit, abandonnée au bout de quelques secondes. Si le service ne répond pas, la page, la copie et l'impression continuent. Aucun cookie n'est déposé par cette requête, et aucun identifiant n'est stocké dans le navigateur. Abacus limite le débit par adresse IP, donc la requête transmet cette adresse. Le total se lit par /get, qui n'augmente pas le compteur. Le détail est aussi sur la page <a href="sources.html">Sources</a>.</p>
     <h2>Outil gratuit</h2>
     <p>Le motif, le transporteur et le texte du dossier sont calculés dans votre navigateur. Ce contenu n'est pas transmis à Plaidoo. Copier ou imprimer la lettre déclenche seulement le compteur décrit ci-dessus.</p>
     <h2>Cookies et polices</h2>
@@ -75,7 +75,7 @@
       <p class="footer-logo"><a href="index.html"><img class="logo logo-footer" src="logo.svg" alt="Plaidoo" width="132" height="45"></a></p>
 
       <p>Ceci n'est pas un conseil juridique. Plaidoo ne garantit aucun résultat.</p>
-      <p><a href="index.html">Présentation</a> · <a href="guides/index.html">Guides</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="sources.html">Sources</a> · <a href="index.html#liste">Contact</a></p>
+      <p><a href="index.html">Présentation</a> · <a href="guides/index.html">Guides</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="sources.html">Sources</a> · <a href="index.html#liste">Contact</a> · <a href="sitemap.xml">Plan du site</a></p>
     </div>
   </footer>
 </body>

@@ -162,7 +162,13 @@ function frenchDate(iso) {
   return `${day} ${months[month - 1]} ${year}`;
 }
 
-function chrome(title, description, canonicalPath, main) {
+function guideCounterKey(slug) {
+  const key = ("guide-" + slug).replace(/[^A-Za-z0-9_.-]/g, "").slice(0, 64);
+  if (!/^[A-Za-z0-9_.-]{3,64}$/.test(key)) throw new Error("clé de compteur invalide: " + slug);
+  return key;
+}
+
+function chrome(title, description, canonicalPath, main, counterKey) {
   const canonical = `${site}${canonicalPath}`;
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -225,7 +231,7 @@ ${main}
       <p><a href="../index.html">Présentation</a> · <a href="../outil.html">Outil</a> · <a href="index.html">Guides</a> · <a href="../sources.html">Sources</a></p>
       <p><a href="../mentions-legales.html">Mentions légales</a> · <a href="../confidentialite.html">Confidentialité</a> · <a href="../index.html#liste">Contact</a> · <a href="../sitemap.xml">Plan du site</a></p>
     </div>
-  </footer>
+  </footer>${counterKey ? `\n  <script src="../js/count.js" data-counter="${escapeAttr(counterKey)}"></script>` : ""}
 </body>
 </html>
 `;
@@ -283,7 +289,8 @@ for (const guide of guides) {
     <article>
 ${guide.html}
     </article>
-${hidesToolCta(guide) ? "" : `    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>\n`}    <p><a href="index.html">Tous les guides</a></p>`
+${hidesToolCta(guide) ? "" : `    <p><a class="button button-primary" href="../outil.html">Ouvrir l'outil gratuit</a></p>\n`}    <p><a href="index.html">Tous les guides</a></p>`,
+    guideCounterKey(guide.slug)
   );
   fs.writeFileSync(path.join(outDir, `${guide.slug}.html`), page);
 }

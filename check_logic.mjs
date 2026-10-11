@@ -211,6 +211,8 @@ assert(sources.includes("adresse IP"), "mention de l'adresse IP recue");
 
 const merci = fs.readFileSync(path.join(root, "merci.html"), "utf8");
 assert(merci.includes('href="outil.html"'), "merci renvoie a l'outil");
+assert(merci.includes('src="js/count.js"') && merci.includes('data-counter="waitlist-merci"'), "compteur de la confirmation");
+assert((merci.match(/<script\b/gi) || []).length === 1, "merci un seul script");
 
 const propos = fs.readFileSync(path.join(root, "a-propos.html"), "utf8");
 assert(propos.includes("accès anticipé"), "accès anticipé");
@@ -226,6 +228,8 @@ assert(!mentions.includes("À COMPLÉTER") && !mentions.includes("[À COMPLÉTER
 const privacy = fs.readFileSync(path.join(root, "confidentialite.html"), "utf8");
 assert(privacy.includes("formsubmit.co"), "FormSubmit dans la confidentialité");
 assert(privacy.includes("Abacus") && privacy.includes("abacus.jasoncameron.dev"), "compteur dans la confidentialité");
+assert(privacy.includes("chaque guide") && privacy.includes("confirmation de la liste d'attente"), "compteurs par page");
+assert(/sans cookie|aucun cookie/i.test(privacy), "compteurs sans cookie");
 assert(privacy.includes("CNIL"), "réclamation CNIL");
 assert(privacy.includes("suppression"), "suppression par le formulaire");
 assert(/ne dépose pas de cookie|aucun cookie|sans cookie/i.test(privacy), "absence de cookie");
@@ -317,7 +321,16 @@ requiredGuides.forEach((name) => assert(guideFiles.includes(name), "guide presen
 for (const file of guideFiles) {
   const html = fs.readFileSync(path.join(root, "guides", file), "utf8");
   assert(!/<script[^>]+src="https?:/i.test(html), "guides/" + file + " sans script externe");
-  assert(!/<script\b/i.test(html), "guides/" + file + " sans script");
+  if (file === "index.html") {
+    assert(!/<script\b/i.test(html), "guides/index sans script");
+  } else {
+    const scripts = html.match(/<script\b[^>]*>/gi) || [];
+    assert(scripts.length === 1, "guides/" + file + " un seul script");
+    const slug = file.replace(/\.html$/, "");
+    const key = ("guide-" + slug).replace(/[^A-Za-z0-9_.-]/g, "").slice(0, 64);
+    assert(/^[A-Za-z0-9_.-]{3,64}$/.test(key), "guides/" + file + " clé valide");
+    assert(html.includes('src="../js/count.js" data-counter="' + key + '"'), "guides/" + file + " compteur");
+  }
   assert(!/<form\b/i.test(html), "guides/" + file + " sans formulaire");
   assert(!emailLike.test(html), "guides/" + file + " sans adresse e-mail");
   assert(externalSrcs(html).length === 0, "guides/" + file + " sans ressource externe");
